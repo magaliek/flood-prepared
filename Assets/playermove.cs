@@ -10,13 +10,11 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        //Enable Collider here
     }
 
     void FixedUpdate()
     {
         rb.linearVelocity = moveInput * moveSpeed;   // 2D standard
-        //Check if collider is enabled here every frame 
     }
 
     public void Move(InputAction.CallbackContext context)
