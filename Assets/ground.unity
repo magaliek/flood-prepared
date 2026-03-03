@@ -790,7 +790,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 180695806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a191a9c3148feb0e2c7aee24e9d0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 87b5f55e0f996bf499aa0171a85e3617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
@@ -1096,7 +1096,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 246732595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a191a9c3148feb0e2c7aee24e9d0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 87b5f55e0f996bf499aa0171a85e3617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
@@ -1198,7 +1198,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 263890228}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a191a9c3148feb0e2c7aee24e9d0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 87b5f55e0f996bf499aa0171a85e3617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
@@ -3040,7 +3040,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 505187003}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a191a9c3148feb0e2c7aee24e9d0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 87b5f55e0f996bf499aa0171a85e3617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
@@ -3244,7 +3244,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 708110594}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a191a9c3148feb0e2c7aee24e9d0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 87b5f55e0f996bf499aa0171a85e3617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
@@ -3483,7 +3483,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 724651976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a191a9c3148feb0e2c7aee24e9d0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 87b5f55e0f996bf499aa0171a85e3617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
@@ -3749,8 +3749,8 @@ GameObject:
   - component: {fileID: 767903450}
   - component: {fileID: 767903452}
   - component: {fileID: 767903451}
-  - component: {fileID: 767903453}
   - component: {fileID: 767903454}
+  - component: {fileID: 767903455}
   m_Layer: 5
   m_Name: WaterBottle
   m_TagString: Untagged
@@ -3815,19 +3815,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767903449}
   m_CullTransparentMesh: 1
---- !u!114 &767903453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767903449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a191a9c3148feb0e2c7aee24e9d0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
-  calories: 0
 --- !u!225 &767903454
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -3840,6 +3827,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &767903455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767903449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b5f55e0f996bf499aa0171a85e3617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  calories: 0
 --- !u!1 &768965008
 GameObject:
   m_ObjectHideFlags: 0
@@ -8834,7 +8834,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 829545200}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3232d827a75f5f3448c9b877e26d0dd0, type: 3}
+  m_Script: {fileID: 11500000, guid: 6a98bc21ac435f641aaadf89fcd873e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
@@ -9620,7 +9620,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1009812897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a191a9c3148feb0e2c7aee24e9d0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 87b5f55e0f996bf499aa0171a85e3617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
@@ -10486,7 +10486,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1215550775}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a191a9c3148feb0e2c7aee24e9d0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 87b5f55e0f996bf499aa0171a85e3617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
@@ -11203,7 +11203,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1371013617}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a191a9c3148feb0e2c7aee24e9d0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 87b5f55e0f996bf499aa0171a85e3617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
@@ -11875,7 +11875,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1556717117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a191a9c3148feb0e2c7aee24e9d0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 87b5f55e0f996bf499aa0171a85e3617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
@@ -12647,7 +12647,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1763548414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a191a9c3148feb0e2c7aee24e9d0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 87b5f55e0f996bf499aa0171a85e3617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
@@ -12953,7 +12953,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1895986431}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a191a9c3148feb0e2c7aee24e9d0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 87b5f55e0f996bf499aa0171a85e3617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
@@ -13342,7 +13342,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1985747420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae7a191a9c3148feb0e2c7aee24e9d0d, type: 3}
+  m_Script: {fileID: 11500000, guid: 87b5f55e0f996bf499aa0171a85e3617, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
