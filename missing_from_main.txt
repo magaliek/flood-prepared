@@ -1,0 +1,175 @@
+Assets/packing assets/antibac.png
+Assets/packing assets/antibac.png.meta
+Assets/packing assets/backpack.png
+Assets/packing assets/backpack.png.meta
+Assets/packing assets/beans.png
+Assets/packing assets/beans.png.meta
+Assets/packing assets/beer bottle.png
+Assets/packing assets/beer bottle.png.meta
+Assets/packing assets/beer can.png
+Assets/packing assets/beer can.png.meta
+Assets/packing assets/biscuits.png
+Assets/packing assets/biscuits.png.meta
+Assets/packing assets/cash.png
+Assets/packing assets/charger.png
+Assets/packing assets/charger.png.meta
+Assets/packing assets/chocolate.png
+Assets/packing assets/chocolate.png.meta
+Assets/packing assets/cigs.png
+Assets/packing assets/cigs.png.meta
+Assets/packing assets/clicked.png
+Assets/packing assets/default.png
+Assets/packing assets/dried mango.png
+Assets/packing assets/dried mango.png.meta
+Assets/packing assets/empty contact list.png
+Assets/packing assets/empty contact list.png.meta
+Assets/packing assets/extra batteries.png
+Assets/packing assets/extra batteries.png.meta
+Assets/packing assets/first aid kit.png
+Assets/packing assets/first aid kit.png.meta
+Assets/packing assets/flashlight.png
+Assets/packing assets/flashlight.png.meta
+Assets/packing assets/garbanzo beans.png
+Assets/packing assets/garbanzo beans.png.meta
+Assets/packing assets/gun.png
+Assets/packing assets/gun.png.meta
+Assets/packing assets/handsker.png
+Assets/packing assets/handsker.png.meta
+Assets/packing assets/havregryn.png
+Assets/packing assets/havregryn.png.meta
+Assets/packing assets/honey.png
+Assets/packing assets/honey.png.meta
+Assets/packing assets/hoodies.png
+Assets/packing assets/hoodies.png.meta
+Assets/packing assets/kaviar.png
+Assets/packing assets/kaviar.png.meta
+Assets/packing assets/knekkebrød.png
+Assets/packing assets/knekkebrød.png.meta
+Assets/packing assets/knife.png
+Assets/packing assets/knife.png.meta
+Assets/packing assets/lentils.png
+Assets/packing assets/lentils.png.meta
+Assets/packing assets/makrell i tomat.png
+Assets/packing assets/makrell i tomat.png.meta
+Assets/packing assets/map.png
+Assets/packing assets/medication.png
+Assets/packing assets/medication.png.meta
+Assets/packing assets/multipurpose tool.png
+Assets/packing assets/multipurpose tool.png.meta
+Assets/packing assets/notebook-done.png
+Assets/packing assets/notebook-done.png.meta
+Assets/packing assets/notebook.png
+Assets/packing assets/notebook.png.meta
+Assets/packing assets/nuts.png
+Assets/packing assets/nuts.png.meta
+Assets/packing assets/pledd.png
+Assets/packing assets/pledd.png.meta
+Assets/packing assets/protein bar 2.png
+Assets/packing assets/protein bar 2.png.meta
+Assets/packing assets/protein bar.png
+Assets/packing assets/protein bar.png.meta
+Assets/packing assets/radio.png
+Assets/packing assets/radio.png.meta
+Assets/packing assets/sardines.png
+Assets/packing assets/sardines.png.meta
+Assets/packing assets/sovepose.png
+Assets/packing assets/sovepose.png.meta
+Assets/packing assets/søppelposer.png
+Assets/packing assets/søppelposer.png.meta
+Assets/packing assets/toilet paper.png
+Assets/packing assets/toilet paper.png.meta
+Assets/packing assets/tuna.png
+Assets/packing assets/tuna.png.meta
+Assets/packing assets/våtservietter.png
+Assets/packing assets/våtservietter.png.meta
+Assets/packing assets/water bottle.png
+Assets/packing assets/water bottle.png.meta
+Assets/packing scripts/Antibac.cs
+Assets/packing scripts/Antibac.cs.meta
+Assets/packing scripts/Backpack.cs
+Assets/packing scripts/Backpack.cs.meta
+Assets/packing scripts/Beans.cs
+Assets/packing scripts/Beans.cs.meta
+Assets/packing scripts/BeerBottle.cs
+Assets/packing scripts/BeerBottle.cs.meta
+Assets/packing scripts/BeerCan.cs
+Assets/packing scripts/BeerCan.cs.meta
+Assets/packing scripts/Biscuits.cs
+Assets/packing scripts/Biscuits.cs.meta
+Assets/packing scripts/CalorieTextScript.cs
+Assets/packing scripts/CalorieTextScript.cs.meta
+Assets/packing scripts/Cash.cs
+Assets/packing scripts/Cash.cs.meta
+Assets/packing scripts/Charger.cs
+Assets/packing scripts/Charger.cs.meta
+Assets/packing scripts/Chocolate.cs
+Assets/packing scripts/Chocolate.cs.meta
+Assets/packing scripts/Cigs.cs
+Assets/packing scripts/Cigs.cs.meta
+Assets/packing scripts/CursorScript.cs
+Assets/packing scripts/CursorScript.cs.meta
+Assets/packing scripts/DriedMango.cs
+Assets/packing scripts/DriedMango.cs.meta
+Assets/packing scripts/ExtraBatteries.cs
+Assets/packing scripts/ExtraBatteries.cs.meta
+Assets/packing scripts/FirstAidKit.cs
+Assets/packing scripts/FirstAidKit.cs.meta
+Assets/packing scripts/FlashLight.cs
+Assets/packing scripts/FlashLight.cs.meta
+Assets/packing scripts/GarbanzoBeans.cs
+Assets/packing scripts/GarbanzoBeans.cs.meta
+Assets/packing scripts/Gun.cs
+Assets/packing scripts/Gun.cs.meta
+Assets/packing scripts/Handsker.cs
+Assets/packing scripts/Handsker.cs.meta
+Assets/packing scripts/Havregryn.cs
+Assets/packing scripts/Havregryn.cs.meta
+Assets/packing scripts/Honey.cs
+Assets/packing scripts/Honey.cs.meta
+Assets/packing scripts/Hoodies.cs
+Assets/packing scripts/Hoodies.cs.meta
+Assets/packing scripts/Kaviar.cs
+Assets/packing scripts/Kaviar.cs.meta
+Assets/packing scripts/Knekkebrød.cs
+Assets/packing scripts/Knekkebrød.cs.meta
+Assets/packing scripts/Knife.cs
+Assets/packing scripts/Knife.cs.meta
+Assets/packing scripts/Lentils.cs
+Assets/packing scripts/Lentils.cs.meta
+Assets/packing scripts/Makrell.cs
+Assets/packing scripts/Makrell.cs.meta
+Assets/packing scripts/Map.cs
+Assets/packing scripts/Map.cs.meta
+Assets/packing scripts/Medication.cs
+Assets/packing scripts/Medication.cs.meta
+Assets/packing scripts/MultiTool.cs
+Assets/packing scripts/MultiTool.cs.meta
+Assets/packing scripts/NoteBook.cs
+Assets/packing scripts/NoteBook.cs.meta
+Assets/packing scripts/Nuts.cs
+Assets/packing scripts/Nuts.cs.meta
+Assets/packing scripts/PB1.cs
+Assets/packing scripts/PB1.cs.meta
+Assets/packing scripts/PB2.cs
+Assets/packing scripts/PB2.cs.meta
+Assets/packing scripts/PackingItem.cs
+Assets/packing scripts/PackingItem.cs.meta
+Assets/packing scripts/Pledd.cs
+Assets/packing scripts/Pledd.cs.meta
+Assets/packing scripts/Radio.cs
+Assets/packing scripts/Radio.cs.meta
+Assets/packing scripts/Sardines.cs
+Assets/packing scripts/Sardines.cs.meta
+Assets/packing scripts/Sovepose.cs
+Assets/packing scripts/Sovepose.cs.meta
+Assets/packing scripts/SøppelPose.cs
+Assets/packing scripts/SøppelPose.cs.meta
+Assets/packing scripts/ToiletPaper.cs
+Assets/packing scripts/ToiletPaper.cs.meta
+Assets/packing scripts/Tuna.cs
+Assets/packing scripts/Tuna.cs.meta
+Assets/packing scripts/VåtServietter.cs
+Logs/AssetImportWorker0.log
+Logs/AssetImportWorker1.log
+Logs/shadercompiler-AssetImportWorker0-0.log
+Logs/shadercompiler-AssetImportWorker1-0.log
