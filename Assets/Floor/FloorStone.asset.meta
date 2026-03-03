@@ -1,8 +1,15 @@
 fileFormatVersion: 2
-guid: b5f5c4f48907c40a3bd44937c5438636
+guid: ede842f89a744fa439464c6a4530b498
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 307715
+  packageName: House Interior Tileset 32x32 LITE
+  packageVersion: 1.0
+  assetPath: Assets/waiting/Graduation Cat/HouseInteriorLITE/demo/tilepalette/FloorStone.asset
+  uploadId: 723420
