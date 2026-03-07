@@ -24,12 +24,12 @@ namespace packing_scripts
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            _rootCanvas.GetComponent<CursorScript>().SetClick();
+            CursorScript.Instance.SetClick();
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            _rootCanvas.GetComponent<CursorScript>().SetDefault();
+            CursorScript.Instance.SetDefault();
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -44,7 +44,7 @@ namespace packing_scripts
         public void OnDrag(PointerEventData eventData)
         {
             _rect.anchoredPosition += eventData.delta / _rootCanvas.scaleFactor;
-            _rootCanvas.GetComponent<CursorScript>().SetClick();
+            CursorScript.Instance.SetClick();
         }
 
         public void OnEndDrag(PointerEventData eventData)

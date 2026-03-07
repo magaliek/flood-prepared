@@ -9,8 +9,6 @@ namespace packing_scripts
         [SerializeField] private Vector2 defaultHotspot;
         [SerializeField] private Vector2 clickHotspot;
         
-        private bool _isDrag;
-
         public static CursorScript Instance { get; private set; }
         
         private void Awake()
@@ -27,21 +25,11 @@ namespace packing_scripts
 
         public void SetDefault()
         {
-            if (!_isDrag)
-            {
-                Cursor.SetCursor(defaultCursor, defaultHotspot, CursorMode.Auto);
-                return;
-            }
-
-            _isDrag = false;
             Cursor.SetCursor(defaultCursor, defaultHotspot, CursorMode.Auto);
         }
 
         public void SetClick()
         {
-            if (_isDrag) return;
-
-            _isDrag = true;
             Cursor.SetCursor(clickCursor, clickHotspot, CursorMode.Auto);
         }
         
