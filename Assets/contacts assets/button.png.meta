@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 93c93d62d40cb3049bb97c0bb9b182fa
+guid: 3c2ee48fea46ced49b43c07bf7da4c84
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,23 +110,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: empty contact list_0
+      name: button_0
       rect:
         serializedVersion: 2
-        x: 134
-        y: 0
-        width: 231
-        height: 500
+        x: 298
+        y: 16
+        width: 517
+        height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 1, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0439b9ccd3a8d14db8b8080e2648794
-      internalID: -1566858376
+      spriteID: 02a6e89fd37758f42b4b4f1d104438af
+      internalID: 2124289486
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 227242987768b5648870c1358fca2363
+    spriteID: 05e62c6095c986241899ff051802b855
     internalID: 0
     vertices: []
     indices: 
@@ -145,7 +145,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      empty contact list_0: -1566858376
+      button_0: 2124289486
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
