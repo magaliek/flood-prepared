@@ -231,9 +231,9 @@ GameObject:
   - component: {fileID: 19142902}
   - component: {fileID: 19142905}
   - component: {fileID: 19142904}
-  - component: {fileID: 19142903}
+  - component: {fileID: 19142906}
   m_Layer: 5
-  m_Name: protein
+  m_Name: proteinText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -258,20 +258,6 @@ RectTransform:
   m_AnchoredPosition: {x: 5, y: -70}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &19142903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 19142901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc4d7a4b3fd872141bb52cf0e3e325f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  myText: {fileID: 19142904}
-  backpack: {fileID: 157002632}
 --- !u!114 &19142904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,8 +280,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Protein: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5e8f40dfce79e874db20aebd6b35e969, type: 2}
+  m_sharedMaterial: {fileID: 2068386782395240029, guid: 5e8f40dfce79e874db20aebd6b35e969, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -319,10 +305,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.2
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -372,6 +358,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19142901}
   m_CullTransparentMesh: 1
+--- !u!114 &19142906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19142901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ff8c4849734d439a8e86da539701be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.ProteinTextScript
+  myText: {fileID: 19142904}
+  backpack: {fileID: 157002632}
 --- !u!1 &66064902
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,6 +532,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &67221453
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -838,6 +843,7 @@ MonoBehaviour:
   - {fileID: 1952906918}
   - {fileID: 66064906}
   panel: {fileID: 1763038915}
+  pNoteBookScript: {fileID: 883577784}
 --- !u!82 &110023760
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1114,6 +1120,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &145237842
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1231,6 +1242,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.Backpack
   calorieText: {fileID: 753921483}
+  carbsText: {fileID: 869453823}
+  proteinText: {fileID: 19142906}
+  fatText: {fileID: 1696850273}
+  sodiumText: {fileID: 559266300}
+  waterText: {fileID: 1583439535}
 --- !u!114 &157002633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1333,6 +1349,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 1.5
 --- !u!114 &157649496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2024,6 +2045,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &212245515
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2786,7 +2812,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 120286a2438e2cb4fa37df9ae3687f23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 0
+  calories: 276.66
+  carbs: 0
+  protein: 19.08
+  fat: 22.26
+  sodium: 1.06
+  water: 0
 --- !u!225 &317057084
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4104,7 +4135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a36541adf61d84fa82d934ebb17341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 0
+  calories: 855
+  carbs: 25.2
+  protein: 14.4
+  fat: 77.4
+  sodium: 7.74
+  water: 0
 --- !u!225 &402524129
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4207,6 +4243,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &420951399
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4308,7 +4349,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fce84642dd6a2b743b800cbe73f2b28b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 0
+  calories: 4070
+  carbs: 660
+  protein: 121
+  fat: 82.5
+  sodium: 0
+  water: 0
 --- !u!225 &421794078
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4536,6 +4582,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &444021348
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4637,7 +4688,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1593e42bc20325e4895ca83f7dac267f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 300
+  calories: 125.4
+  carbs: 6.27
+  protein: 0.99
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &452544460
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -4818,7 +4874,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf52cf451b2b1bc44ba85d2b43d6ed66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 600
+  calories: 391.4
+  carbs: 49.4
+  protein: 23.94
+  fat: 4.56
+  sodium: 1.52
+  water: 0
 --- !u!225 &455067344
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5343,6 +5404,7 @@ GameObject:
   - component: {fileID: 500621937}
   - component: {fileID: 500621939}
   - component: {fileID: 500621938}
+  - component: {fileID: 500621940}
   m_Layer: 5
   m_Name: Packing
   m_TagString: Untagged
@@ -5410,7 +5472,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -41, y: 1322}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &500621938
@@ -5451,6 +5513,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500621936}
   m_CullTransparentMesh: 1
+--- !u!114 &500621940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500621936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae588385257118e4ea99d9a3430c86b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &502700170
 GameObject:
   m_ObjectHideFlags: 0
@@ -5488,7 +5562,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 44, y: -273}
-  m_SizeDelta: {x: 275, y: 190}
+  m_SizeDelta: {x: 185, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &502700172
 MonoBehaviour:
@@ -5503,6 +5577,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &502700173
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5852,9 +5931,9 @@ GameObject:
   - component: {fileID: 559266296}
   - component: {fileID: 559266299}
   - component: {fileID: 559266298}
-  - component: {fileID: 559266297}
+  - component: {fileID: 559266300}
   m_Layer: 5
-  m_Name: sodium
+  m_Name: sodiumText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5879,20 +5958,6 @@ RectTransform:
   m_AnchoredPosition: {x: 5, y: -150}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &559266297
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 559266295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc4d7a4b3fd872141bb52cf0e3e325f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  myText: {fileID: 559266298}
-  backpack: {fileID: 157002632}
 --- !u!114 &559266298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5915,8 +5980,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Sodium: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5e8f40dfce79e874db20aebd6b35e969, type: 2}
+  m_sharedMaterial: {fileID: 2068386782395240029, guid: 5e8f40dfce79e874db20aebd6b35e969, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5940,10 +6005,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.2
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -5993,6 +6058,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559266295}
   m_CullTransparentMesh: 1
+--- !u!114 &559266300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559266295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67b501f7e17423cab2bcfa57f96eeef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.SodiumTextScript
+  myText: {fileID: 559266298}
+  backpack: {fileID: 157002632}
 --- !u!1 &563327464
 GameObject:
   m_ObjectHideFlags: 0
@@ -6045,6 +6124,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &563327467
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6146,7 +6230,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f63c347a772c0419fd7f719eaa6c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 400
+  calories: 1912
+  carbs: 252
+  protein: 29.2
+  fat: 84
+  sodium: 5.2
+  water: 0
 --- !u!225 &566140476
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6261,6 +6350,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 1.5
 --- !u!114 &580987432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6439,7 +6533,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0cecd64a49c624fb123fd0adac7e9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 0
+  calories: 185.85
+  carbs: 30.15
+  protein: 2.97
+  fat: 5.4
+  sodium: 0.225
+  water: 0
 --- !u!225 &613332463
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6633,6 +6732,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &673574084
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6682,6 +6786,138 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673574081}
+  m_CullTransparentMesh: 1
+--- !u!1 &677226065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 677226066}
+  - component: {fileID: 677226069}
+  - component: {fileID: 677226068}
+  - component: {fileID: 677226067}
+  m_Layer: 5
+  m_Name: backpackOnClick
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &677226066
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677226065}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 816515347}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 343, y: 9}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &677226067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677226065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 677226068}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1409565427}
+        m_TargetAssemblyTypeName: interactable_furniture.BackpackScript, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &677226068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677226065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 1017807464, guid: 389b05752805f524ab4f6b036383cc0c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &677226069
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677226065}
   m_CullTransparentMesh: 1
 --- !u!1 &689789047
 GameObject:
@@ -7156,7 +7392,7 @@ GameObject:
   - component: {fileID: 753921484}
   - component: {fileID: 753921483}
   m_Layer: 5
-  m_Name: calories
+  m_Name: caloriesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7198,8 +7434,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Calories: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5e8f40dfce79e874db20aebd6b35e969, type: 2}
+  m_sharedMaterial: {fileID: 2068386782395240029, guid: 5e8f40dfce79e874db20aebd6b35e969, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7223,10 +7459,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.2
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -7449,8 +7685,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7475,8 +7711,8 @@ Transform:
   m_GameObject: {fileID: 770769782}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.51, z: -26.7}
-  m_LocalScale: {x: 0.80555, y: 0.80555, z: 0.80555}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -7713,6 +7949,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &796956925
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -12488,6 +12729,111 @@ MonoBehaviour:
   ticked: 0
   NotTickedCircle: {fileID: 21300000, guid: e2abd14aebf2c4b27949de5598aabcfe, type: 3}
   TickedCircle: {fileID: 21300000, guid: 42f721947ff004acea65649059d6c68b, type: 3}
+--- !u!1 &816515346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 816515347}
+  - component: {fileID: 816515350}
+  - component: {fileID: 816515349}
+  - component: {fileID: 816515348}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &816515347
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816515346}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1370828177}
+  - {fileID: 677226066}
+  - {fileID: 1409565426}
+  - {fileID: 1862996138}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &816515348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816515346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &816515349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816515346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &816515350
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816515346}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &839625376
 GameObject:
   m_ObjectHideFlags: 0
@@ -12552,6 +12898,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 1.5
 --- !u!114 &839625380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12641,7 +12992,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e64b4ddd528477f489553f5ef27aa562, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 0
+  calories: 1046.1
+  carbs: 255.75
+  protein: 1.65
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &843581667
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -12881,7 +13237,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cfdc86e64b91c148a527ab3cbfc4192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 0
+  calories: 682
+  carbs: 160
+  protein: 3.6
+  fat: 1.2
+  sodium: 0.6
+  water: 0
 --- !u!225 &855207131
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -12984,6 +13345,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &860646814
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -13134,9 +13500,9 @@ GameObject:
   - component: {fileID: 869453819}
   - component: {fileID: 869453822}
   - component: {fileID: 869453821}
-  - component: {fileID: 869453820}
+  - component: {fileID: 869453823}
   m_Layer: 5
-  m_Name: carbs
+  m_Name: carbsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13161,20 +13527,6 @@ RectTransform:
   m_AnchoredPosition: {x: 5, y: -30}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &869453820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869453818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc4d7a4b3fd872141bb52cf0e3e325f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  myText: {fileID: 869453821}
-  backpack: {fileID: 157002632}
 --- !u!114 &869453821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13197,8 +13549,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Carbs: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5e8f40dfce79e874db20aebd6b35e969, type: 2}
+  m_sharedMaterial: {fileID: 2068386782395240029, guid: 5e8f40dfce79e874db20aebd6b35e969, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -13222,10 +13574,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.2
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -13275,6 +13627,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869453818}
   m_CullTransparentMesh: 1
+--- !u!114 &869453823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869453818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b13db750b18d46f88341ec4422f1c50a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.CarbsTextScript
+  myText: {fileID: 869453821}
+  backpack: {fileID: 157002632}
 --- !u!1 &872991959
 GameObject:
   m_ObjectHideFlags: 0
@@ -13326,7 +13692,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52ac9c75bbe31b54992abeff28ca5bbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 0
+  calories: 1120
+  carbs: 106
+  protein: 16.6
+  fat: 68
+  sodium: 0.4
+  water: 0
 --- !u!225 &872991962
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -13429,8 +13800,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
   doneNotebookImage: {fileID: 1863403325, guid: be96c82e89ff91c478be4e3aa539a3a1, type: 3}
-  value: 0
 --- !u!225 &883577785
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -13997,6 +14372,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 1.5
 --- !u!114 &943603213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14208,6 +14588,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &1006506026
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -14322,6 +14707,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 1.5
 --- !u!114 &1019138023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15148,7 +15538,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a297f3c780d51df4cb10c4b1b9969b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 0
+  calories: 243.6
+  carbs: 30.8
+  protein: 10.08
+  fat: 8.4
+  sodium: 0.728
+  water: 0
 --- !u!225 &1138009967
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -15296,6 +15691,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &1170605267
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -15535,6 +15935,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &1201126892
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -15974,6 +16379,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 1.5
 --- !u!114 &1274381511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16218,6 +16628,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 1.5
 --- !u!114 &1292945296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16382,7 +16797,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bfac7f150f313e40865cbd0533834d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 500
+  calories: 1014.6
+  carbs: 153.9
+  protein: 31.35
+  fat: 17.1
+  sodium: 2.85
+  water: 0
 --- !u!225 &1317391556
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -16484,7 +16904,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef33e8fc14a0763478a73a30c40031a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 0
+  calories: 431.05
+  carbs: 0
+  protein: 43.105
+  fat: 28.675
+  sodium: 2.035
+  water: 0
 --- !u!225 &1319415084
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -16587,6 +17012,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &1340722098
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -16795,6 +17225,138 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357890418}
   m_CullTransparentMesh: 1
+--- !u!1 &1370828176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1370828177}
+  - component: {fileID: 1370828180}
+  - component: {fileID: 1370828179}
+  - component: {fileID: 1370828178}
+  m_Layer: 5
+  m_Name: notebookOnClick
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1370828177
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370828176}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 816515347}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -508, y: 109}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1370828178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370828176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1370828179}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1862996139}
+        m_TargetAssemblyTypeName: interactable_furniture.NotebookScript, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1370828179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370828176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1221985183, guid: 29c2e8a08f173aa4e94abe310ced8e4b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1370828180
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1370828176}
+  m_CullTransparentMesh: 1
 --- !u!1 &1386438985
 GameObject:
   m_ObjectHideFlags: 0
@@ -16846,7 +17408,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a1a3af3fe6de6342b25d52566c760ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 0
+  calories: 1033.6
+  carbs: 20.4
+  protein: 32.3
+  fat: 93.5
+  sodium: 0
+  water: 0
 --- !u!225 &1386438988
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -16948,7 +17515,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c43716004a9b67c4ab68ac58b1bebb33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 300
+  calories: 190
+  carbs: 9.5
+  protein: 1.5
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &1403158704
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -16999,6 +17571,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403158701}
   m_CullTransparentMesh: 1
+--- !u!1 &1409565425
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1409565426}
+  - component: {fileID: 1409565427}
+  m_Layer: 5
+  m_Name: backpackScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1409565426
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409565425}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 816515347}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1409565427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409565425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1c118fcd9ad04149965bb8f3ce97043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  panel: {fileID: 500621936}
 --- !u!1 &1423003797
 GameObject:
   m_ObjectHideFlags: 0
@@ -17456,6 +18077,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 1.5
 --- !u!225 &1484932707
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -17737,6 +18363,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 1.5
 --- !u!114 &1509049282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17826,7 +18457,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9afa9618faad18545b4ae7890f83beff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 0
+  calories: 330.6
+  carbs: 46.36
+  protein: 24.32
+  fat: 1.9
+  sodium: 3.04
+  water: 0
 --- !u!225 &1519773695
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -17929,6 +18565,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &1522815705
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -18154,6 +18795,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 1.5
 --- !u!114 &1547562869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18256,6 +18902,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.Antibac
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!114 &1561550034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18467,7 +19118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 684, y: -1087}
+  m_AnchoredPosition: {x: 1862, y: -1196}
   m_SizeDelta: {x: -240.5867, y: -318.0081}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1581962066
@@ -18519,7 +19170,7 @@ GameObject:
   - component: {fileID: 1583439531}
   - component: {fileID: 1583439534}
   - component: {fileID: 1583439533}
-  - component: {fileID: 1583439532}
+  - component: {fileID: 1583439535}
   m_Layer: 5
   m_Name: waterText
   m_TagString: Untagged
@@ -18546,20 +19197,6 @@ RectTransform:
   m_AnchoredPosition: {x: 5, y: -190}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1583439532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583439530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc4d7a4b3fd872141bb52cf0e3e325f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  myText: {fileID: 1583439533}
-  backpack: {fileID: 157002632}
 --- !u!114 &1583439533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18580,10 +19217,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Water liters: '
+  m_text: 'Water: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5e8f40dfce79e874db20aebd6b35e969, type: 2}
+  m_sharedMaterial: {fileID: 2068386782395240029, guid: 5e8f40dfce79e874db20aebd6b35e969, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18607,10 +19244,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.2
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -18660,6 +19297,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583439530}
   m_CullTransparentMesh: 1
+--- !u!114 &1583439535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583439530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f728683d03a4196a4f6b1354c11ff56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterTextScript
+  myText: {fileID: 1583439533}
+  backpack: {fileID: 157002632}
 --- !u!1 &1602910887
 GameObject:
   m_ObjectHideFlags: 0
@@ -18724,6 +19375,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 1.5
 --- !u!114 &1602910891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19193,9 +19849,9 @@ GameObject:
   - component: {fileID: 1696850269}
   - component: {fileID: 1696850272}
   - component: {fileID: 1696850271}
-  - component: {fileID: 1696850270}
+  - component: {fileID: 1696850273}
   m_Layer: 5
-  m_Name: fat
+  m_Name: fatText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19220,20 +19876,6 @@ RectTransform:
   m_AnchoredPosition: {x: 5, y: -110}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1696850270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1696850268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc4d7a4b3fd872141bb52cf0e3e325f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  myText: {fileID: 1696850271}
-  backpack: {fileID: 157002632}
 --- !u!114 &1696850271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19256,8 +19898,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Fat: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5e8f40dfce79e874db20aebd6b35e969, type: 2}
+  m_sharedMaterial: {fileID: 2068386782395240029, guid: 5e8f40dfce79e874db20aebd6b35e969, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19281,10 +19923,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 33.2
-  m_fontSizeBase: 30
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -19334,6 +19976,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1696850268}
   m_CullTransparentMesh: 1
+--- !u!114 &1696850273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696850268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeed099f69df4891bd95d0906e562b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.FatTextScript
+  myText: {fileID: 1696850271}
+  backpack: {fileID: 157002632}
 --- !u!1 &1708826906
 GameObject:
   m_ObjectHideFlags: 0
@@ -19386,6 +20042,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &1708826909
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -19526,6 +20187,7 @@ GameObject:
   - component: {fileID: 1763038916}
   - component: {fileID: 1763038918}
   - component: {fileID: 1763038917}
+  - component: {fileID: 1763038919}
   m_Layer: 5
   m_Name: Contacts
   m_TagString: Untagged
@@ -19553,7 +20215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3, y: 3}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1763038917
@@ -19594,6 +20256,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763038915}
   m_CullTransparentMesh: 1
+--- !u!114 &1763038919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763038915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0824c39503f654a41a2574fc10c32add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1784126493
 GameObject:
   m_ObjectHideFlags: 0
@@ -19755,7 +20429,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54f38180febbb094e9a55e703de557fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 0
+  calories: 254.1
+  carbs: 5.06
+  protein: 13.2
+  fat: 19.8
+  sodium: 1.1
+  water: 0
 --- !u!225 &1794591180
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -19882,7 +20561,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1610, y: -1364}
+  m_AnchoredPosition: {x: -2984, y: -2418}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1818278179
@@ -20090,6 +20769,55 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &1862996137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1862996138}
+  - component: {fileID: 1862996139}
+  m_Layer: 5
+  m_Name: notebookScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1862996138
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862996137}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 816515347}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1862996139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862996137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5118bfd74a52f240852aa96bdc57c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  panel: {fileID: 1763038915}
 --- !u!1 &1872805921
 GameObject:
   m_ObjectHideFlags: 0
@@ -20177,6 +20905,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &1909327153
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -20485,6 +21218,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 1.5
 --- !u!114 &1935258153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21399,7 +22137,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 606ac6fa6417ceb44bfb6fa8e4b26422, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  calories: 0
+  calories: 412.66
+  carbs: 52.68
+  protein: 22.389
+  fat: 6.585
+  sodium: 2.634
+  water: 0
 --- !u!225 &1996271781
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -21791,6 +22534,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 1.5
 --- !u!114 &2013309657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22026,6 +22774,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.WaterBottle
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 1.5
 --- !u!114 &2033187212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22116,6 +22869,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &2034487264
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -22659,6 +23417,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   calories: 0
+  carbs: 0
+  protein: 0
+  fat: 0
+  sodium: 0
+  water: 0
 --- !u!225 &2114139417
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -22848,6 +23611,7 @@ SceneRoots:
   - {fileID: 770769786}
   - {fileID: 1043194390}
   - {fileID: 1963690692}
+  - {fileID: 816515347}
   - {fileID: 768965010}
   - {fileID: 1784126497}
   - {fileID: 453252568}

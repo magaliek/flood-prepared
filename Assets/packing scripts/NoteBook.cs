@@ -6,33 +6,18 @@ namespace packing_scripts
     public class Notebook : PackingItem
     {
         [SerializeField] private Sprite doneNotebookImage;
-        private bool _done;
-        [SerializeField] private bool value; //remove
-
-        private Image _myImage;
-        private Sprite _originalSprite;
+        
+        private Image _myNotebook;
         
         
-        private void Start()
+        private void Awake()
         {
-            _myImage = GetComponent<Image>();
-            _originalSprite = _myImage.sprite;
+            _myNotebook = GetComponent<Image>();
         }
 
-        public void SetDone(bool val)
+        public void ChangeImage()
         {
-            _done = val;
-            ChangeImage();
-        }
-
-        private void Update()
-        {
-            ChangeImage();
-        }
-
-        private void ChangeImage()
-        {
-            _myImage.sprite = value ? doneNotebookImage : _originalSprite; //change it
+            _myNotebook.sprite = doneNotebookImage;
         }
     }
 }
