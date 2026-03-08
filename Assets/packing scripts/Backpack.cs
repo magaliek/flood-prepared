@@ -11,23 +11,31 @@ namespace packing_scripts
     public class Backpack : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
     {
         private List<PackingItem> _packed = new List<PackingItem>();
-        public int Calories { get; private set; }
+        private float _calories;
+        private float _carbs;
+        private float _protein;
+        private float _fat;
+        private float _sodium;
+        private float _water;
 
         public IReadOnlyList<PackingItem> Packed => _packed;
 
         private RectTransform _contentParent;
-        private CanvasGroup _cg;
         
         private Outline _outline;
         
         private readonly Dictionary<CanvasGroup, Coroutine> _fadeRoutines = new();
 
-        [SerializeField] private CalorieTextScript calorieText;
+        [SerializeField] private MacroText calorieText;
+        [SerializeField] private MacroText carbsText;
+        [SerializeField] private MacroText proteinText;
+        [SerializeField] private MacroText fatText;
+        [SerializeField] private MacroText sodiumText;
+        [SerializeField] private MacroText waterText;
 
         public void Awake()
         {
             _contentParent = transform as RectTransform;
-            _cg = GetComponent<CanvasGroup>();
             _outline = GetComponent<Outline>();
             _outline.enabled = false;
         }
@@ -50,7 +58,7 @@ namespace packing_scripts
             PackingItem item = draggedObj.GetComponent<PackingItem>();
             CanvasGroup itemCg = draggedObj.GetComponent<CanvasGroup>();
             AddNewItem(item);
-            UpdateCalories(item);
+            UpdateMacros(item);
             FadeOut(itemCg, 2f);
         }
 
@@ -98,13 +106,24 @@ namespace packing_scripts
             _fadeRoutines.Remove(cg);
         }
 
-        private void UpdateCalories(PackingItem item)
+        private void UpdateMacros(PackingItem item)
         {
-            Calories += item.Calories;
-            calorieText.UpdateText();
+            _calories += item.Calories;
+            _carbs += item.Carbs;
+            _protein += item.Protein;
+            _fat += item.Fat;
+            _sodium += item.Sodium;
+            _water += item.Water;
+            
+            calorieText.UpdateText($"Calories: {_calories}kcal");
+            carbsText.UpdateText($"Carbs: {_carbs}g");
+            proteinText.UpdateText($"Protein: {_protein}g");
+            fatText.UpdateText($"Fat: {_fat}g");
+            sodiumText.UpdateText($"Sodium: {_sodium}mg");
+            waterText.UpdateText($"Water: {_water}L");
         }
 
-        private PackingItem AddNewItem(PackingItem newItem)
+        private PackingItem AddNewItem(PackingItem newItem) //maybe useless
         {
             try
             {
@@ -118,7 +137,7 @@ namespace packing_scripts
             return newItem;
         }
 
-        public void RemoveItem(PackingItem item)
+        public void RemoveItem(PackingItem item) //maybe useless
         {
             try
             {

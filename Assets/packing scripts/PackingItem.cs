@@ -7,8 +7,18 @@ namespace packing_scripts
         IPointerDownHandler, IPointerUpHandler,
         IBeginDragHandler, IDragHandler, IEndDragHandler
     {
-        [SerializeField] private int calories;
-        public int Calories => calories;
+        [SerializeField] private float calories;
+        public float Calories => calories;
+        [SerializeField] private float carbs;
+        public float Carbs => carbs;
+        [SerializeField] private float protein;
+        public float Protein => protein;
+        [SerializeField] private float fat;
+        public float Fat => fat;
+        [SerializeField] private float sodium;
+        public float Sodium => sodium;
+        [SerializeField] private float water;
+        public float Water => water;
 
         private RectTransform _rect;
         private CanvasGroup _cg;
