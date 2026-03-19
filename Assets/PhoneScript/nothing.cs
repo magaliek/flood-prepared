@@ -1,13 +1,16 @@
 using UnityEngine;
 
-public class OpenMap : MonoBehaviour
+public class nothing : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject MapPanel;
-    
-    // Update is called once per frame
-    public void ShowMap()
+    void Start()
     {
-        MapPanel.SetActive(true);
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
