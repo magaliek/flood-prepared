@@ -4,11 +4,11 @@ public class Circle : MonoBehaviour
 {
 
 
-    public Image imageCircle;
-    public bool ticked = false;
+    [SerializeField] private Image imageCircle;
+    [SerializeField] private bool ticked = false;
 
-    public Sprite  NotTickedCircle;
-    public Sprite TickedCircle;
+    [SerializeField] private Sprite  NotTickedCircle;
+    [SerializeField] private Sprite TickedCircle;
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
