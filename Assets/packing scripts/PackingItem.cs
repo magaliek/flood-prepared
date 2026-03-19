@@ -7,8 +7,18 @@ namespace packing_scripts
         IPointerDownHandler, IPointerUpHandler,
         IBeginDragHandler, IDragHandler, IEndDragHandler
     {
-        [SerializeField] private int calories;
-        public int Calories => calories;
+        [SerializeField] private float calories;
+        public float Calories => calories;
+        [SerializeField] private float carbs;
+        public float Carbs => carbs;
+        [SerializeField] private float protein;
+        public float Protein => protein;
+        [SerializeField] private float fat;
+        public float Fat => fat;
+        [SerializeField] private float sodium;
+        public float Sodium => sodium;
+        [SerializeField] private float water;
+        public float Water => water;
 
         private RectTransform _rect;
         private CanvasGroup _cg;
@@ -19,17 +29,17 @@ namespace packing_scripts
         {
             _rect = GetComponent<RectTransform>();
             _cg = GetComponent<CanvasGroup>();
-            _rootCanvas = GetComponentInParent<Canvas>();
+            _rootCanvas = FindRootCanvas();
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            _rootCanvas.GetComponent<CursorScript>().SetClick();
+            CursorScript.Instance.SetClick();
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            _rootCanvas.GetComponent<CursorScript>().SetDefault();
+            CursorScript.Instance.SetDefault();
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -44,7 +54,7 @@ namespace packing_scripts
         public void OnDrag(PointerEventData eventData)
         {
             _rect.anchoredPosition += eventData.delta / _rootCanvas.scaleFactor;
-            _rootCanvas.GetComponent<CursorScript>().SetClick();
+            CursorScript.Instance.SetClick();
         }
 
         public void OnEndDrag(PointerEventData eventData)
@@ -55,6 +65,18 @@ namespace packing_scripts
             {
                 transform.SetParent(_originalParent, true);
             }
+        }
+
+        private Canvas FindRootCanvas()
+        {
+            Canvas c = GetComponentInParent<Canvas>();
+            while (c != null && c.transform.parent != null)
+            {
+                Canvas parent = c.transform.parent.GetComponentInParent<Canvas>();
+                if (parent == null) break;
+                c = parent;
+            }
+            return c;
         }
     }
 }
