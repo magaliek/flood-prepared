@@ -27,10 +27,11 @@ namespace contacts_scripts
 
         public void OnDoneClicked()
         {
-            if (IsRed() || _anyEmpty) //change to let you close panel without finishing properly
+            if (IsRed() || _anyEmpty)
             {
                 GetComponent<AudioSource>().Play();
-                return;
+                _anyEmpty = false;
+                panel.SetActive(false);
             };
             _anyEmpty = false;
             pNoteBookScript.ChangeImage();
