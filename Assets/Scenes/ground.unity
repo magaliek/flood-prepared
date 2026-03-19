@@ -1188,6 +1188,7 @@ GameObject:
   - component: {fileID: 157002633}
   - component: {fileID: 157002632}
   - component: {fileID: 157002631}
+  - component: {fileID: 157002635}
   m_Layer: 5
   m_Name: Backpack
   m_TagString: Untagged
@@ -1285,6 +1286,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157002629}
   m_CullTransparentMesh: 1
+--- !u!225 &157002635
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157002629}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &157649492
 GameObject:
   m_ObjectHideFlags: 0
@@ -4566,8 +4579,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -778, y: 95}
-  m_SizeDelta: {x: 220, y: 145}
+  m_AnchoredPosition: {x: -821, y: 126}
+  m_SizeDelta: {x: 250, y: 145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &444021347
 MonoBehaviour:
@@ -13223,7 +13236,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 182, y: 330}
-  m_SizeDelta: {x: 125, y: 200}
+  m_SizeDelta: {x: 125, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &855207130
 MonoBehaviour:
