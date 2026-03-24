@@ -903,6 +903,7 @@ GameObject:
   - component: {fileID: 70665648}
   - component: {fileID: 70665647}
   - component: {fileID: 70665649}
+  - component: {fileID: 70665650}
   m_Layer: 0
   m_Name: drawer1
   m_TagString: Untagged
@@ -1030,6 +1031,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.7162032, y: 2.0893474}
   m_EdgeRadius: 0
+--- !u!114 &70665650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70665646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5118bfd74a52f240852aa96bdc57c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  panel: {fileID: 1934965194}
 --- !u!1 &78563680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2448,6 +2462,7 @@ GameObject:
   - component: {fileID: 168619223}
   - component: {fileID: 168619224}
   - component: {fileID: 168619225}
+  - component: {fileID: 168619226}
   m_Layer: 0
   m_Name: studychair
   m_TagString: Untagged
@@ -2575,6 +2590,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.4649568, y: 1.9949868}
   m_EdgeRadius: 0
+--- !u!114 &168619226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168619222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5118bfd74a52f240852aa96bdc57c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::interactable_furniture.NotebookScript
+  panel: {fileID: 1763038915}
 --- !u!1 &176561625
 GameObject:
   m_ObjectHideFlags: 0
@@ -5065,46 +5093,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 10, y: -2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 11, y: -2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 12, y: -2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 13, y: -2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 14, y: -2, z: 0}
     second:
       serializedVersion: 2
@@ -5256,46 +5244,6 @@ Tilemap:
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
   - first: {x: 40, y: -2, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 10, y: -1, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 11, y: -1, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 12, y: -1, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 13, y: -1, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 0
@@ -5467,13 +5415,13 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 105
+  - m_RefCount: 97
     m_Data: {fileID: 11400000, guid: 244322a8d76673a42b2c813563794c59, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 105
+  - m_RefCount: 97
     m_Data: {fileID: 7482667652216324306, guid: 3dd3f5d46ac789f45b4ca7a07e6a744e, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 105
+  - m_RefCount: 97
     m_Data:
       e00: 1
       e01: 0
@@ -5492,7 +5440,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 105
+  - m_RefCount: 97
     m_Data: {r: 1, g: 1, b: 1, a: 0}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -7281,6 +7229,7 @@ GameObject:
   - component: {fileID: 404573563}
   - component: {fileID: 404573564}
   - component: {fileID: 404573565}
+  - component: {fileID: 404573566}
   m_Layer: 0
   m_Name: studytable
   m_TagString: Untagged
@@ -7408,6 +7357,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.158834, y: 3.2343445}
   m_EdgeRadius: 0
+--- !u!114 &404573566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404573562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5118bfd74a52f240852aa96bdc57c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::interactable_furniture.NotebookScript
+  panel: {fileID: 1763038915}
 --- !u!1 &419443029
 GameObject:
   m_ObjectHideFlags: 0
@@ -11651,6 +11613,7 @@ GameObject:
   - component: {fileID: 570287587}
   - component: {fileID: 570287586}
   - component: {fileID: 570287585}
+  - component: {fileID: 570287588}
   m_Layer: 0
   m_Name: hallway_window_trigger_tilemap
   m_TagString: Untagged
@@ -12049,6 +12012,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &570287588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570287583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5118bfd74a52f240852aa96bdc57c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::interactable_furniture.OnClickScript
+  panel: {fileID: 1645828929}
 --- !u!1 &580987428
 GameObject:
   m_ObjectHideFlags: 0
@@ -17835,6 +17811,7 @@ GameObject:
   - component: {fileID: 854868589}
   - component: {fileID: 854868590}
   - component: {fileID: 854868591}
+  - component: {fileID: 854868592}
   m_Layer: 0
   m_Name: drawer2
   m_TagString: Untagged
@@ -17962,6 +17939,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.6298885, y: 1.9339541}
   m_EdgeRadius: 0
+--- !u!114 &854868592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854868588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5118bfd74a52f240852aa96bdc57c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::interactable_furniture.OnClickScript
+  panel: {fileID: 1934965194}
 --- !u!1 &855207128
 GameObject:
   m_ObjectHideFlags: 0
@@ -18811,6 +18801,7 @@ GameObject:
   - component: {fileID: 879434649}
   - component: {fileID: 879434648}
   - component: {fileID: 879434650}
+  - component: {fileID: 879434651}
   m_Layer: 0
   m_Name: angledbackpack
   m_TagString: Untagged
@@ -18926,7 +18917,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.045804977, y: 0.014792442}
+  m_Offset: {x: 0.028594136, y: 0.06777766}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -18936,8 +18927,21 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.5188406, y: 1.582778}
+  m_Size: {x: 2.1352918, y: 1.6887484}
   m_EdgeRadius: 0
+--- !u!114 &879434651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879434647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5118bfd74a52f240852aa96bdc57c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::interactable_furniture.BackpackScript
+  panel: {fileID: 500621936}
 --- !u!1 &883577782
 GameObject:
   m_ObjectHideFlags: 0
@@ -20239,7 +20243,6 @@ GameObject:
   m_Component:
   - component: {fileID: 975232261}
   - component: {fileID: 975232263}
-  - component: {fileID: 975232262}
   m_Layer: 0
   m_Name: map_0
   m_TagString: Untagged
@@ -20262,19 +20265,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 454244667}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &975232262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 975232260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e3c5d41cdf3140e5ac481ae860547ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::mapOnClickScript
-  panel: {fileID: 1581962064}
 --- !u!212 &975232263
 SpriteRenderer:
   serializedVersion: 2
@@ -25499,6 +25489,7 @@ GameObject:
   - component: {fileID: 1195351248}
   - component: {fileID: 1195351249}
   - component: {fileID: 1195351250}
+  - component: {fileID: 1195351251}
   m_Layer: 0
   m_Name: bookdrawer
   m_TagString: Untagged
@@ -25626,6 +25617,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.833267, y: 2.6721797}
   m_EdgeRadius: 0
+--- !u!114 &1195351251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195351247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5118bfd74a52f240852aa96bdc57c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::mapOnClickScript
+  panel: {fileID: 1581962064}
 --- !u!1 &1201126889
 GameObject:
   m_ObjectHideFlags: 0
@@ -30378,6 +30382,7 @@ GameObject:
   - component: {fileID: 1471946167}
   - component: {fileID: 1471946168}
   - component: {fileID: 1471946169}
+  - component: {fileID: 1471946170}
   m_Layer: 0
   m_Name: exit (2)
   m_TagString: Untagged
@@ -30505,6 +30510,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 8, y: 8}
   m_EdgeRadius: 0
+--- !u!114 &1471946170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471946166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 811dc57073400664b9e2284d17f3c275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1479338931
 GameObject:
   m_ObjectHideFlags: 0
@@ -32218,6 +32235,7 @@ GameObject:
   - component: {fileID: 1560440324}
   - component: {fileID: 1560440323}
   - component: {fileID: 1560440322}
+  - component: {fileID: 1560440325}
   m_Layer: 0
   m_Name: living_room_window_trigger_tilemap
   m_TagString: Untagged
@@ -32536,6 +32554,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1560440325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560440320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5118bfd74a52f240852aa96bdc57c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::interactable_furniture.OnClickScript
+  panel: {fileID: 1645828929}
 --- !u!1 &1561550030
 GameObject:
   m_ObjectHideFlags: 0
@@ -33111,6 +33142,7 @@ GameObject:
   - component: {fileID: 1582264841}
   - component: {fileID: 1582264840}
   - component: {fileID: 1582264839}
+  - component: {fileID: 1582264842}
   m_Layer: 0
   m_Name: bedroom_window_trigger_tilemap
   m_TagString: Untagged
@@ -33429,6 +33461,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1582264842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582264837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5118bfd74a52f240852aa96bdc57c67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::interactable_furniture.OnClickScript
+  panel: {fileID: 1645828929}
 --- !u!1 &1583439530
 GameObject:
   m_ObjectHideFlags: 0
