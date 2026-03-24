@@ -22,15 +22,13 @@ public class WindowInteractionSystem : MonoBehaviour
 
         if (promptUI) promptUI.Show(current.GetPrompt());
 
-        // Press (ein gong)
+
         if (Input.GetKeyDown(KeyCode.E))
             current.Interact();
 
-        // Hold (for sealing)
         if (Input.GetKey(KeyCode.E))
             current.HoldInteract(Time.deltaTime);
 
-        // Release
         if (Input.GetKeyUp(KeyCode.E))
             current.ResetHold();
     }

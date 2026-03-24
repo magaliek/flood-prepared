@@ -21,6 +21,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (doc == null) return;
         items.Add(doc);
+        Debug.Log("Added to inventory: " + doc.displayName + " | Count: " + items.Count);
         OnInventoryChanged?.Invoke();
     }
 

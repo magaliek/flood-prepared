@@ -9,8 +9,8 @@ public class DraggableInventoryItem : MonoBehaviour,
     public DocumentData Document { get; private set; }
 
     [Header("Optional refs (auto-find if empty)")]
-    [SerializeField] private Image iconImage;          // child: Icon (Image)
-    [SerializeField] private TMP_Text labelText;       // child: Label (TMP)
+    [SerializeField] private Image iconImage;
+    [SerializeField] private TMP_Text labelText;
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
@@ -25,7 +25,6 @@ public class DraggableInventoryItem : MonoBehaviour,
         if (canvasGroup == null)
             canvasGroup = gameObject.AddComponent<CanvasGroup>();
 
-        // Auto-find children if not assigned
         if (iconImage == null)
         {
             var t = transform.Find("Icon");
@@ -44,7 +43,6 @@ public class DraggableInventoryItem : MonoBehaviour,
         Document = doc;
         canvas = parentCanvas;
 
-        // Set icon
         if (iconImage != null)
         {
             iconImage.sprite = (doc != null) ? doc.icon : null;
@@ -52,7 +50,6 @@ public class DraggableInventoryItem : MonoBehaviour,
             iconImage.preserveAspect = true;
         }
 
-        // Set label
         if (labelText != null)
         {
             labelText.text = (doc != null) ? doc.displayName : "";
@@ -75,7 +72,6 @@ public class DraggableInventoryItem : MonoBehaviour,
     {
         canvasGroup.blocksRaycasts = true;
 
-        // If not dropped into a new parent, snap back
         if (transform.parent == canvas.transform)
             transform.SetParent(originalParent, true);
     }
