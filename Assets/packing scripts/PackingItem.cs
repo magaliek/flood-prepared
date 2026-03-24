@@ -29,7 +29,7 @@ namespace packing_scripts
         {
             _rect = GetComponent<RectTransform>();
             _cg = GetComponent<CanvasGroup>();
-            _rootCanvas = GetComponentInParent<Canvas>();
+            _rootCanvas = FindRootCanvas();
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -65,6 +65,18 @@ namespace packing_scripts
             {
                 transform.SetParent(_originalParent, true);
             }
+        }
+
+        private Canvas FindRootCanvas()
+        {
+            Canvas c = GetComponentInParent<Canvas>();
+            while (c != null && c.transform.parent != null)
+            {
+                Canvas parent = c.transform.parent.GetComponentInParent<Canvas>();
+                if (parent == null) break;
+                c = parent;
+            }
+            return c;
         }
     }
 }
