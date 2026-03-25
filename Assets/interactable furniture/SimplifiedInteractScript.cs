@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace interactable_furniture
 {
-    public class OnClickScript : MonoBehaviour
+    public class SimplifiedInteractScript : MonoBehaviour
     {
         [SerializeField] private GameObject panel;
         private bool _playerNearby = false;
