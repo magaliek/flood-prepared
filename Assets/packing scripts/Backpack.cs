@@ -39,6 +39,13 @@ namespace packing_scripts
             _outline = GetComponent<Outline>();
             _outline.enabled = false;
         }
+        
+        public void OnEnable()
+        {
+            _contentParent = transform as RectTransform;
+            _outline = GetComponent<Outline>();
+            _outline.enabled = false;
+        }
 
         public void OnDrop(PointerEventData eventData)
         {

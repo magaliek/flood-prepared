@@ -8,6 +8,7 @@ public class InventoryUI : MonoBehaviour
 
     private void OnEnable()
     {
+        if (InventoryManager.Instance == null) return;
         InventoryManager.Instance.OnInventoryChanged += Rebuild;
         Rebuild();
     }
