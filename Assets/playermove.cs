@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-     private float speed = 4f;
+    [SerializeField] float speed = 12f;
      private Rigidbody2D rb;
     private Vector2 movementInput;
     private Animator animator;
@@ -23,19 +23,21 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void Move(InputAction.CallbackContext c)
+{
+    Vector2 input = c.ReadValue<Vector2>();
+
+    if (c.canceled)
+    {
+        animator.SetBool("playerWalking", false);
+        // don't update inputx/inputy here — keep last direction
+    }
+    else
     {
         animator.SetBool("playerWalking", true);
-
-        if (c.canceled)
-        {
-            animator.SetBool("playerWalking", false);
-            animator.SetFloat("X", movementInput.x);
-            animator.SetFloat("Y", movementInput.y);
-
-        }
-        movementInput = c.ReadValue<Vector2>();
-        animator.SetFloat("inputx", movementInput.x);
-        animator.SetFloat("inputy", movementInput.y);
-
+        animator.SetFloat("inputx", input.x);
+        animator.SetFloat("inputy", input.y);
     }
+
+    movementInput = input;
+}
 }

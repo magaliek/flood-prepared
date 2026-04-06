@@ -3440,6 +3440,7 @@ GameObject:
   - component: {fileID: 844253834}
   - component: {fileID: 844253833}
   - component: {fileID: 844253832}
+  - component: {fileID: 844253838}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3481,17 +3482,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.035884265, y: -0.17756261}
+  m_Offset: {x: -0.008017361, y: -0.4790151}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.43}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 0.32, y: 0.43}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.18701392, y: 0.04537478}
+  m_Size: {x: 0.35676515, y: 0.1097627}
   m_EdgeRadius: 0
 --- !u!114 &844253833
 MonoBehaviour:
@@ -3502,10 +3503,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 844253831}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d791a18f42bb2428e8d26baee89d7a83, type: 3}
+  m_Script: {fileID: 11500000, guid: 27cbd967331dfcf48aeaf95fb5c67507, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  moveSpeed: 10
+  speed: 8
 --- !u!114 &844253834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3688,7 +3689,7 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 5875527054735182794, guid: 28393dd55e49f0e47971170728473128, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bbc4f0f1c14224220bc304d8741704af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3708,11 +3709,33 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 86.15, y: -4.7, z: -6.01}
-  m_LocalScale: {x: 10.237894, y: 10.237894, z: 10.237894}
+  m_LocalScale: {x: 5.7297897, y: 5.7297897, z: 5.7297897}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &844253838
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844253831}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 49e18853864ad4f6eb9fae1c1db4ad6a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &874889822
 GameObject:
   m_ObjectHideFlags: 0
@@ -4121,11 +4144,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6615141180707210025, guid: f0333d75ea1c84bd9b466fa31969ec74, type: 3}
+      propertyPath: m_text
+      value: Press Enter to open WaterValve
+      objectReference: {fileID: 0}
     - target: {fileID: 7776147755577628200, guid: f0333d75ea1c84bd9b466fa31969ec74, type: 3}
       propertyPath: m_Name
       value: WaterValveTaskUI
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8950039825667908341, guid: f0333d75ea1c84bd9b466fa31969ec74, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
