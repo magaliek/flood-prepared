@@ -857,10 +857,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 34246527}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27cbd967331dfcf48aeaf95fb5c67507, type: 3}
+  m_Script: {fileID: 11500000, guid: fd95ca8c9dae745fd84f4afca3bea172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  speed: 8
+  speed: 12
 --- !u!114 &34246531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12482,8 +12482,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde07c028f4324f78beff82e1b4498db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  documents: []
-  prompt: Press E to open
 --- !u!61 &1176761996
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17303,8 +17301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b377e740f74984cf19b009fdc5bb45c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  promptText: {fileID: 0}
-  interactButton: {fileID: 0}
 --- !u!224 &1708830178
 RectTransform:
   m_ObjectHideFlags: 0
