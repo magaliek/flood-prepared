@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &78563681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2071,8 +2071,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b377e740f74984cf19b009fdc5bb45c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  promptText: {fileID: 0}
-  interactButton: {fileID: 0}
 --- !u!1 &490675415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2118,7 +2116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae1763b7ccc44685aafdaad11c3ceb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractTrigger
-  interactionSystem: {fileID: 485696611}
+  interactionSystem: {fileID: 0}
 --- !u!58 &490675418
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4091,13 +4089,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0add8db4253438fbd9ecce52e62cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DocumentTaskController
-  requiredDocuments:
-  - {fileID: 11400000, guid: 12713168e8e4b4c07b2e1b95136abf68, type: 2}
-  - {fileID: 11400000, guid: 05698387adedf482484c453f4ec7afcd, type: 2}
-  - {fileID: 11400000, guid: dc7a7bc12386d4b0e8ace324341533c4, type: 2}
-  - {fileID: 11400000, guid: f6ef832cbb11748edbd6803f6301f03c, type: 2}
-  - {fileID: 11400000, guid: b1bfaf28ff8814880b836ce0c541b0d9, type: 2}
-  - {fileID: 11400000, guid: 4484fd2eec576458997c1e07fb09626d, type: 2}
+  requiredDocuments: []
   folderProgressText: {fileID: 0}
   scanButtonObject: {fileID: 0}
 --- !u!114 &1092972704
@@ -4834,7 +4826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1315905568
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4924,7 +4916,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1357890419
 RectTransform:
   m_ObjectHideFlags: 0
