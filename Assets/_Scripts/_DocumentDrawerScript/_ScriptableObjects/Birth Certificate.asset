@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18f9d6cdf694e4c2cb55a65e33b6b503, type: 3}
+  m_Script: {fileID: 11500000, guid: a8030297e688d47aea125e4c02ff9e32, type: 3}
   m_Name: Birth Certificate
   m_EditorClassIdentifier: Assembly-CSharp::DocumentData
   id: birth_certificate
   displayName: Birth Certificate
-  icon: {fileID: -1165337740, guid: 5c76ef47286a94a278d5b70c2f8b5aad, type: 3}
+  icon: {fileID: -1165337740, guid: 9eed29dceed54574882a8b8260744de0, type: 3}

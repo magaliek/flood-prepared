@@ -20,7 +20,7 @@ public class SealCell : MonoBehaviour, IPointerEnterHandler
         filled = false;
 
         if (img != null)
-            img.color = new Color(0.88f, 0.93f, 0.93f, 0.08f);
+            img.color = new Color(0.878f, 0.925f, 0.922f, 0.08f);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -31,7 +31,7 @@ public class SealCell : MonoBehaviour, IPointerEnterHandler
         filled = true;
 
         if (img != null)
-            img.color = new Color(0.88f, 0.93f, 0.93f, 0.45f);
+            img.color = new Color(0.878f, 0.925f, 0.922f, 0.45f);
 
         manager.NotifyCellFilled();
     }

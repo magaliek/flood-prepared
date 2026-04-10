@@ -38,6 +38,8 @@ public class InteractionSystem : MonoBehaviour
     // Kan kalles fra E eller fra knapp (OnClick)
     public void TryInteract()
     {
+        Debug.Log("TryInteract called. Current = " + (current == null ? "NULL" : current.GetType().Name));
+        
         if (current == null) return;
 
         Debug.Log("Interacting with: " + current.GetType().Name);
