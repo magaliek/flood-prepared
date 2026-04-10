@@ -32,6 +32,13 @@ namespace packing_scripts
             _rootCanvas = FindRootCanvas();
         }
 
+        private void OnEnable()
+        {
+            _rect = GetComponent<RectTransform>();
+            _cg = GetComponent<CanvasGroup>();
+            _rootCanvas = FindRootCanvas();
+        }
+
         public void OnPointerDown(PointerEventData eventData)
         {
             CursorScript.Instance.SetClick();
