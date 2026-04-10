@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 6563101569212739932}
   - component: {fileID: 9033057812805765095}
   - component: {fileID: 5342209260576337421}
-  - component: {fileID: 1116276592096171090}
+  - component: {fileID: -7121099375227804393}
   m_Layer: 5
   m_Name: InventoryItem
   m_TagString: Untagged
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1116276592096171090
+--- !u!114 &-7121099375227804393
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8576652834511131945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f5fdf8ae8c8e4e578e15fcb73312d56, type: 3}
+  m_Script: {fileID: 11500000, guid: 96fc52111a9dd462f858d0659dc9d24e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DraggableInventoryItem
   iconImage: {fileID: 0}
