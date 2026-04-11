@@ -17,6 +17,8 @@ namespace packing_scripts
         private float _fat;
         private float _sodium;
         private float _water;
+        private float _weight;
+        private MaxWeight _maxWeightScript;
 
         public IReadOnlyList<PackingItem> Packed => _packed;
 
@@ -32,12 +34,15 @@ namespace packing_scripts
         [SerializeField] private MacroText fatText;
         [SerializeField] private MacroText sodiumText;
         [SerializeField] private MacroText waterText;
+        [SerializeField] private MacroText weightText;
+        [SerializeField] private GameObject maxWeight;
 
         public void Awake()
         {
             _contentParent = transform as RectTransform;
             _outline = GetComponent<Outline>();
             _outline.enabled = false;
+            _maxWeightScript = maxWeight.GetComponent<MaxWeight>();
         }
         
         public void OnEnable()
@@ -51,6 +56,12 @@ namespace packing_scripts
         {
             GameObject draggedObj = eventData.pointerDrag;
             if (draggedObj == null) return;
+
+            if (_weight >= _maxWeightScript.Max)
+            {
+                _maxWeightScript.PlayAnimate();
+                return;
+            }
             
             draggedObj.transform.SetParent(_contentParent, false);
 
@@ -66,6 +77,7 @@ namespace packing_scripts
             CanvasGroup itemCg = draggedObj.GetComponent<CanvasGroup>();
             AddNewItem(item);
             UpdateMacros(item);
+            
             FadeOut(itemCg, 2f);
         }
 
@@ -121,13 +133,15 @@ namespace packing_scripts
             _fat += item.Fat;
             _sodium += item.Sodium;
             _water += item.Water;
+            _weight += item.Weight;
             
-            calorieText.UpdateText($"Calories: {_calories}kcal");
-            carbsText.UpdateText($"Carbs: {_carbs}g");
-            proteinText.UpdateText($"Protein: {_protein}g");
-            fatText.UpdateText($"Fat: {_fat}g");
-            sodiumText.UpdateText($"Sodium: {_sodium}mg");
-            waterText.UpdateText($"Water: {_water}L");
+            calorieText.UpdateText($"Calories: {_calories}kcal / 3570kcal");
+            carbsText.UpdateText($"Carbs: {_carbs}g / 390g");
+            proteinText.UpdateText($"Protein: {_protein}g / 168g");
+            fatText.UpdateText($"Fat: {_fat}g / 148.5g");
+            sodiumText.UpdateText($"Sodium: {_sodium}mg / 1500mg");
+            waterText.UpdateText($"Water: {_water}L / 7.5L");
+            weightText.UpdateText($"Weight: {_weight}kg / {_maxWeightScript.Max}");
         }
 
         private PackingItem AddNewItem(PackingItem newItem) //maybe useless
@@ -144,11 +158,14 @@ namespace packing_scripts
             return newItem;
         }
 
-        public void RemoveItem(PackingItem item) //maybe useless
+        public void RemoveItem(PackingItem item)
         {
             try
             {
                 _packed.Remove(item);
+                item.ResetItem();
+                _weight = 0f;
+                weightText.UpdateText($"Weight: {_weight}kg");
             }
             catch (Exception e)
             {
