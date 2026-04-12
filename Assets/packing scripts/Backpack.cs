@@ -10,6 +10,8 @@ namespace packing_scripts
 {
     public class Backpack : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
     {
+        public static Backpack Instance { get; private set; }
+        
         private List<PackingItem> _packed = new List<PackingItem>();
         private float _calories;
         private float _carbs;
@@ -39,6 +41,9 @@ namespace packing_scripts
 
         public void Awake()
         {
+            if (Instance != null) {Destroy(gameObject); return;}
+            Instance = this;
+            
             _contentParent = transform as RectTransform;
             _outline = GetComponent<Outline>();
             _outline.enabled = false;

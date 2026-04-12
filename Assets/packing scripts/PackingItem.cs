@@ -7,48 +7,55 @@ namespace packing_scripts
         IPointerDownHandler, IPointerUpHandler,
         IBeginDragHandler, IDragHandler, IEndDragHandler
     {
-        [SerializeField] private float calories;
+        [SerializeField] protected float calories;
         public float Calories => calories;
-        [SerializeField] private float carbs;
+        [SerializeField] protected float carbs;
         public float Carbs => carbs;
-        [SerializeField] private float protein;
+        [SerializeField] protected float protein;
         public float Protein => protein;
-        [SerializeField] private float fat;
+        [SerializeField] protected float fat;
         public float Fat => fat;
-        [SerializeField] private float sodium;
+        [SerializeField] protected float sodium;
         public float Sodium => sodium;
-        [SerializeField] private float water;
+        [SerializeField] protected float water;
         public float Water => water;
-        [SerializeField] private float weight;
+        [SerializeField] protected float weight;
         public float Weight => weight;
+        [SerializeField] protected int points;
         
 
-        private RectTransform _rect;
-        private CanvasGroup _cg;
-        private Canvas _rootCanvas;
-        private Transform _originalParent;
-        private Vector2 _originalPosition;
-        private Vector2 _originalAnchorMin;
-        private Vector2 _originalAnchorMax;
-        private Vector2 _originalPivot;
+        protected RectTransform _rect;
+        protected CanvasGroup _cg;
+        protected Canvas _rootCanvas;
+        protected Transform _originalParent;
+        protected Vector2 _originalPosition;
+        protected Vector2 _originalAnchorMin;
+        protected Vector2 _originalAnchorMax;
+        protected Vector2 _originalPivot;
         
-        private void Awake()
+        protected virtual void Awake()
         {
             _rect = GetComponent<RectTransform>();
             _cg = GetComponent<CanvasGroup>();
             _rootCanvas = FindRootCanvas();
         }
         
-        private void Start()
+        protected void Start()
         {
             _originalParent = transform.parent;
             _originalPosition = _rect.anchoredPosition;
             _originalAnchorMin = _rect.anchorMin;
             _originalAnchorMax = _rect.anchorMax;
             _originalPivot = _rect.pivot;
+            GetPoints();
         }
 
-        private void OnEnable()
+        public virtual int GetPoints()
+        {
+            return points;
+        }
+
+        protected void OnEnable()
         {
             _rect = GetComponent<RectTransform>();
             _cg = GetComponent<CanvasGroup>();
@@ -102,7 +109,7 @@ namespace packing_scripts
             }
         }
 
-        private Canvas FindRootCanvas()
+        protected Canvas FindRootCanvas()
         {
             Canvas c = GetComponentInParent<Canvas>();
             return c != null ? c.rootCanvas : null;

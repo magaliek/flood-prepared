@@ -709,6 +709,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.2
+  points: 0
 --- !u!225 &26314567
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1327,6 +1328,7 @@ MonoBehaviour:
   sodium: 2.035
   water: 0
   weight: 0.145
+  points: 3
 --- !u!225 &126491957
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1435,6 +1437,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.9
+  points: 0
 --- !u!225 &145970692
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1543,6 +1546,7 @@ MonoBehaviour:
   sodium: 2.634
   water: 0
   weight: 0.4
+  points: 4
 --- !u!225 &178468097
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1651,6 +1655,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.33
+  points: 0
 --- !u!225 &199265840
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1897,6 +1902,7 @@ MonoBehaviour:
   sodium: 0.225
   water: 0
   weight: 0.06
+  points: 5
 --- !u!225 &205421753
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2291,6 +2297,7 @@ MonoBehaviour:
   sodium: 0
   water: 1.5
   weight: 1.5
+  points: 5
 --- !u!114 &241959759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2520,6 +2527,7 @@ MonoBehaviour:
   sodium: 1.52
   water: 0
   weight: 0.4
+  points: 4
 --- !u!225 &255304351
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2840,6 +2848,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.135
+  points: 3
 --- !u!114 &267015668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3882,6 +3891,61 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &317715528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 317715530}
+  - component: {fileID: 317715529}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &317715529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317715528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6cbb7ae0f9d1a9428360a92b4f245a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::score_system.ScoreScript
+  chosenShelter: 0
+  packingDone: 0
+  notebookDone: 0
+  mapDone: 0
+  windowDone: 0
+  valveDone: 0
+  drawerDone: 0
+  fuseboxDone: 0
+  notificationsDone: 0
+  leftOnTime: 0
+  tookBackpack: 0
+--- !u!4 &317715530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317715528}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 960, y: 540, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &320274405
 GameObject:
   m_ObjectHideFlags: 0
@@ -4713,6 +4777,7 @@ MonoBehaviour:
   sodium: 1.06
   water: 0
   weight: 0.12
+  points: 3
 --- !u!225 &461002680
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -5211,6 +5276,7 @@ MonoBehaviour:
   sodium: 0
   water: 1.5
   weight: 1.5
+  points: 5
 --- !u!114 &520350192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7670,6 +7736,7 @@ MonoBehaviour:
   sodium: 0
   water: 1.5
   weight: 1.5
+  points: 5
 --- !u!114 &679254785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7848,6 +7915,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.3
+  points: 5
 --- !u!225 &719783281
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -7956,6 +8024,7 @@ MonoBehaviour:
   sodium: 0.6
   water: 0
   weight: 0.1
+  points: 2
 --- !u!225 &727816780
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -8064,6 +8133,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.08
+  points: 2
 --- !u!225 &744826806
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -9101,6 +9171,7 @@ MonoBehaviour:
   sodium: 0
   water: 1.5
   weight: 1.5
+  points: 5
 --- !u!114 &787094592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9197,6 +9268,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.15
+  points: 5
 --- !u!225 &800778136
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -9317,6 +9389,7 @@ MonoBehaviour:
   sodium: 0
   water: 1.5
   weight: 1.5
+  points: 5
 --- !u!114 &821152041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9779,6 +9852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.DoneScriptP
   panel: {fileID: 931135734}
+  score: {fileID: 317715529}
 --- !u!4 &880424177
 Transform:
   m_ObjectHideFlags: 0
@@ -9941,6 +10015,7 @@ MonoBehaviour:
   sodium: 0.728
   water: 0
   weight: 0.06
+  points: 5
 --- !u!225 &894273719
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -10772,6 +10847,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.1
+  points: 3
 --- !u!225 &955669872
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -10880,6 +10956,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.06
+  points: 0
 --- !u!225 &963217727
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -11079,6 +11156,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.6
+  points: 5
 --- !u!225 &977520187
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -11276,6 +11354,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.12
+  points: 0
 --- !u!225 &995347673
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -11396,6 +11475,7 @@ MonoBehaviour:
   sodium: 0
   water: 1.5
   weight: 1.5
+  points: 5
 --- !u!114 &1014850396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12082,6 +12162,7 @@ MonoBehaviour:
   sodium: 0
   water: 1.5
   weight: 1.5
+  points: 5
 --- !u!114 &1089616182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12573,6 +12654,7 @@ MonoBehaviour:
   sodium: 0.4
   water: 0
   weight: 0.1
+  points: 5
 --- !u!225 &1103230346
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -12861,6 +12943,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.8
+  points: 5
 --- !u!225 &1160795518
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -12969,6 +13052,7 @@ MonoBehaviour:
   sodium: 5.2
   water: 0
   weight: 0.15
+  points: 2
 --- !u!225 &1170421474
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -13711,6 +13795,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.15
+  points: 0
   doneNotebookImage: {fileID: 1863403325, guid: be96c82e89ff91c478be4e3aa539a3a1, type: 3}
 --- !u!225 &1223692300
 CanvasGroup:
@@ -13839,6 +13924,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.12
+  points: 2
 --- !u!225 &1229928534
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -13993,6 +14079,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.15
+  points: 0
 --- !u!225 &1263982058
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -14234,6 +14321,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 1.2
+  points: 5
 --- !u!225 &1288609942
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -14342,6 +14430,7 @@ MonoBehaviour:
   sodium: 7.74
   water: 0
   weight: 0.2
+  points: 2
 --- !u!225 &1309053676
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -14951,6 +15040,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.03
+  points: 0
 --- !u!225 &1394558722
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -15197,6 +15287,7 @@ MonoBehaviour:
   sodium: 2.85
   water: 0
   weight: 0.2
+  points: 3
 --- !u!225 &1402865774
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -15474,6 +15565,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.35
+  points: 3
 --- !u!225 &1430848660
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -15594,6 +15686,7 @@ MonoBehaviour:
   sodium: 0
   water: 1.5
   weight: 1.5
+  points: 5
 --- !u!114 &1443461174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15690,6 +15783,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.5
+  points: 5
 --- !u!225 &1443788356
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -15906,6 +16000,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.2
+  points: 5
 --- !u!225 &1489026243
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -16164,6 +16259,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 1.2
+  points: 1
 --- !u!225 &1511169513
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -16392,6 +16488,7 @@ MonoBehaviour:
   sodium: 0
   water: 1.5
   weight: 1.5
+  points: 5
 --- !u!114 &1551922647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17267,6 +17364,7 @@ MonoBehaviour:
   sodium: 0
   water: 1.5
   weight: 1.5
+  points: 5
 --- !u!225 &1631795695
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -17758,6 +17856,7 @@ MonoBehaviour:
   sodium: 1.1
   water: 0
   weight: 0.17
+  points: 3
 --- !u!225 &1687295088
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -18278,6 +18377,7 @@ MonoBehaviour:
   sodium: 3.04
   water: 0
   weight: 0.5
+  points: 3
 --- !u!225 &1765016607
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -18599,6 +18699,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.01
+  points: 3
 --- !u!225 &1816309017
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -19628,6 +19729,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.25
+  points: 4
 --- !u!225 &1931354507
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -20099,6 +20201,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.33
+  points: 0
 --- !u!225 &1986300766
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -20599,6 +20702,7 @@ MonoBehaviour:
   sodium: 0
   water: 1.5
   weight: 1.5
+  points: 5
 --- !u!114 &2035997982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20707,6 +20811,7 @@ MonoBehaviour:
   sodium: 0
   water: 1.5
   weight: 1.5
+  points: 5
 --- !u!114 &2039799272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20815,6 +20920,7 @@ MonoBehaviour:
   sodium: 0
   water: 1.5
   weight: 1.5
+  points: 5
 --- !u!114 &2039875416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21056,6 +21162,7 @@ MonoBehaviour:
   sodium: 0
   water: 1.5
   weight: 1.5
+  points: 5
 --- !u!114 &2081822392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21152,6 +21259,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.08
+  points: 2
 --- !u!225 &2096333569
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -21429,6 +21537,7 @@ MonoBehaviour:
   sodium: 0
   water: 0
   weight: 0.1
+  points: 5
 --- !u!225 &2117435407
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -21485,6 +21594,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 757798289}
   - {fileID: 1847520328}
+  - {fileID: 317715530}
   - {fileID: 1563162119}
   - {fileID: 34246534}
   - {fileID: 756755388}
