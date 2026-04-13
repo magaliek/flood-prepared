@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using score_system;
+using Unity.VisualScripting;
 public class notificationscript : MonoBehaviour
 {
     [SerializeField] private Image imageApp;
@@ -18,9 +20,19 @@ public class notificationscript : MonoBehaviour
      public void notification()
     {
         notificationOn = !notificationOn;
+
         if (notificationOn)
             imageApp.sprite = notifOn;
         else
           imageApp.sprite = notifOff;
+
+        if (notificationOn)
+        {
+            ScoreScript.Instance.notificationsDone = true;
+        }
+        else
+        {
+            ScoreScript.Instance.notificationsDone = false;
+        }
     }
 }
