@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using score_system;
 
 public class SealMinigame : MonoBehaviour
 {
@@ -82,6 +83,8 @@ public class SealMinigame : MonoBehaviour
 
             if (progressText != null)
                 progressText.text = "Seal done";
+
+            ScoreScript.Instance.windowDone = true;
 
             panelToHide.SetActive(false);
         }

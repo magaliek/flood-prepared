@@ -1,4 +1,5 @@
 using UnityEngine;
+using score_system;
 
 public class InteractableFuseBox : MonoBehaviour
 {
@@ -61,6 +62,8 @@ public class InteractableFuseBox : MonoBehaviour
 
         if (promptUI)
             promptUI.Show("Power disconnected");
+        
+        score_system.ScoreScript.Instance.fuseboxDone = true;
     }
 
     public void CancelTask()
