@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/LogIn.unity
+    guid: d952f889fff526845800b2da7e27f920
+  - enabled: 1
     path: Assets/Scenes/Hallway.unity
-    guid: 429d7263a69d44bd4ad0151e0ac248f8
+    guid: 9b7355061c0d46a4383cd784a0f7ef63
   - enabled: 1
     path: Assets/Scenes/living room.unity
     guid: 502ad6225928783469cfde0a911d5e96

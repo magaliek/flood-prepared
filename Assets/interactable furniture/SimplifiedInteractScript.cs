@@ -1,4 +1,5 @@
 using UnityEngine;
+using score_system;
 
 namespace interactable_furniture
 {
