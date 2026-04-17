@@ -24,7 +24,7 @@ public class InteractableWaterValve : MonoBehaviour
 
         UpdatePrompt();
 
-        if (!isDone && !taskOpen && Input.GetKeyDown(KeyCode.E))
+        if (!isDone && !taskOpen && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)))
         {
             if (valveTask)
             {
@@ -39,7 +39,7 @@ public class InteractableWaterValve : MonoBehaviour
         if (!promptUI) return;
 
         if (!isDone)
-            promptUI.Show("Press E to shut off water");
+            promptUI.Show("Press Enter to shut off water");
         else
             promptUI.Show("Water shut off");
     }

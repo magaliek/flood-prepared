@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DocumentData
   id: rental_lease
   displayName: Rental lease
-  icon: {fileID: -1212047965, guid: 5c76ef47286a94a278d5b70c2f8b5aad, type: 3}
+  icon: {fileID: 21300000, guid: bf42d75ded83445d0b741f425e05348f, type: 3}

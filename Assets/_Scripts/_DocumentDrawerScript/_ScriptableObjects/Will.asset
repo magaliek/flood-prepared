@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DocumentData
   id: will
   displayName: Will
-  icon: {fileID: 1286595572, guid: 5c76ef47286a94a278d5b70c2f8b5aad, type: 3}
+  icon: {fileID: 21300000, guid: af8b531123a364e4380b0244b1aef84a, type: 3}

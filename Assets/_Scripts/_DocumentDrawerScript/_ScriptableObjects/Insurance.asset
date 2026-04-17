@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DocumentData
   id: insurance
   displayName: Insurance Documents
-  icon: {fileID: -1699418753, guid: 5c76ef47286a94a278d5b70c2f8b5aad, type: 3}
+  icon: {fileID: 21300000, guid: 1d4e4469e20164dc193b479b0f3da373, type: 3}

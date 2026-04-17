@@ -31,16 +31,17 @@ public class InteractableFuseBox : MonoBehaviour
 
         if (!isPowerOff)
         {
-            if (promptUI) promptUI.Show("Press E to turn off power");
+            if (promptUI) promptUI.Show("Press Enter to turn off power");
         }
         else
         {
             if (promptUI) promptUI.Show("Power disconnected");
         }
 
-        if (!isPowerOff && !taskOpen && Input.GetKeyDown(KeyCode.E))
+        if (!isPowerOff && !taskOpen &&
+            (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)))
         {
-            Debug.Log("E pressed while in fuse box range");
+            Debug.Log("Enter pressed while in fuse box range");
 
             if (fuseBoxTask)
             {

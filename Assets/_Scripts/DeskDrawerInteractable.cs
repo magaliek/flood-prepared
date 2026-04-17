@@ -4,7 +4,7 @@ public class DeskDrawerInteractable : MonoBehaviour, IInteractable
 {
     [SerializeField] private GameObject drawerTaskUI;
 
-    public string PromptText => "Interact (E)";
+    public string PromptText => "Press Enter to Interact";
 
     public void Interact()
     {

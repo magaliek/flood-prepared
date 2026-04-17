@@ -7,14 +7,18 @@ public class InteractableDocumentStackSource : MonoBehaviour, IInteractable
     [SerializeField] private List<DocumentData> documents = new List<DocumentData>();
 
     [Header("Prompt text")]
-    [SerializeField] private string prompt = "Press E to open";
+    [SerializeField] private string prompt = "Press Enter to open";
+    [SerializeField] private string completedPrompt = "Documents picked up";
 
     public string PromptText
     {
         get
         {
             int left = DocumentsLeft();
-            if (left <= 0) return "Empty";
+
+            if (left <= 0)
+                return completedPrompt;
+
             return $"{prompt} ({left} left)";
         }
     }
@@ -23,7 +27,6 @@ public class InteractableDocumentStackSource : MonoBehaviour, IInteractable
     {
         if (DocumentsLeft() <= 0)
         {
-            DisableWhenEmpty();
             return;
         }
 
@@ -33,28 +36,20 @@ public class InteractableDocumentStackSource : MonoBehaviour, IInteractable
             return;
         }
 
-        // Open drawer UI and show these documents
         DrawerUI.Instance.Open(this, gameObject.name);
     }
 
-    // DrawerUI calls this to show what's inside
     public List<DocumentData> GetDocuments()
     {
-        // return the actual list (simple + ok for prototype)
         return documents;
     }
 
-    // DrawerUI calls this when player clicks a specific document
     public bool TakeSpecific(DocumentData doc)
     {
         if (doc == null) return false;
         if (documents == null) return false;
 
         bool removed = documents.Remove(doc);
-
-        if (DocumentsLeft() <= 0)
-            DisableWhenEmpty();
-
         return removed;
     }
 
@@ -64,14 +59,11 @@ public class InteractableDocumentStackSource : MonoBehaviour, IInteractable
 
         int count = 0;
         for (int i = 0; i < documents.Count; i++)
-            if (documents[i] != null) count++;
+        {
+            if (documents[i] != null)
+                count++;
+        }
 
         return count;
-    }
-
-    private void DisableWhenEmpty()
-    {
-        var col = GetComponent<Collider2D>();
-        if (col != null) col.enabled = false;
     }
 }

@@ -34,13 +34,13 @@ public class InteractableWindow : MonoBehaviour
 
         UpdatePrompt();
 
-        if (!isClosed && Input.GetKeyDown(KeyCode.E))
+        if (!isClosed && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)))
         {
             CloseWindow();
             return;
         }
 
-        if (isClosed && !isSealed && !minigameOpen && Input.GetKeyDown(KeyCode.E))
+        if (isClosed && !isSealed && !minigameOpen && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)))
         {
             if (sealMinigame)
             {
@@ -55,9 +55,9 @@ public class InteractableWindow : MonoBehaviour
         if (!promptUI) return;
 
         if (!isClosed)
-            promptUI.Show("Press E to close window");
+            promptUI.Show("Press Enter to close window");
         else if (!isSealed)
-            promptUI.Show("Press E to seal window");
+            promptUI.Show("Press Enter to seal window");
         else
             promptUI.Show("Window sealed");
     }

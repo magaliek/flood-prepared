@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DocumentData
   id: birth_certificate
   displayName: Birth Certificate
-  icon: {fileID: -1165337740, guid: 5c76ef47286a94a278d5b70c2f8b5aad, type: 3}
+  icon: {fileID: 21300000, guid: 2814291552bef4fad835afa2ca0e9e73, type: 3}
