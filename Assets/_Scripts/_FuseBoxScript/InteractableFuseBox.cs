@@ -64,7 +64,7 @@ public class InteractableFuseBox : MonoBehaviour
         if (promptUI)
             promptUI.Show("Power disconnected");
         
-        score_system.ScoreScript.Instance.fuseboxDone = true;
+        ScoreScript.Instance.fuseboxDone = true;
     }
 
     public void CancelTask()
@@ -75,9 +75,11 @@ public class InteractableFuseBox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (!ScoreScript.Instance.phase2) return;
+
         Debug.Log("Something entered trigger: " + other.name);
 
-        if (!other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player") || ScoreScript.Instance.fuseboxDone) return;
 
         Debug.Log("Player entered fuse box range");
         playerInRange = true;
