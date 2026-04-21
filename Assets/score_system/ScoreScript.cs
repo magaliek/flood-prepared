@@ -39,6 +39,8 @@ namespace score_system
         public bool notificationsDone;
         public bool leftOnTime;
         public bool tookBackpack;
+        
+        public bool phase2 = false;
 
         public void Awake()
         {
