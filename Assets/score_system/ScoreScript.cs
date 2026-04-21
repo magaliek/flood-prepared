@@ -3,6 +3,7 @@ using MenuScripts;
 using maggies_awesome_score_system;
 using packing_scripts;
 using UnityEngine;
+using System;
 
 namespace score_system
 {
@@ -39,6 +40,8 @@ namespace score_system
         public bool notificationsDone;
         public bool leftOnTime;
         public bool tookBackpack;
+
+        public bool phase2;
 
         public void Awake()
         {
@@ -143,9 +146,12 @@ namespace score_system
             ResetPoints(); AddDrawerPoints();
             AddFuseboxPoints(); AddMapPoints();
             AddNotebookPoints(); AddNotificationPoints();
-            AddTakingBackpackPoints(Backpack.Instance.Packed); 
-            AddTimerPoints(); AddValvePoints(); 
-            AddWindowPoints(); AddPackingPoints(Backpack.Instance.Packed);
+            
+            var packed = Backpack.Instance != null ? Backpack.Instance.Packed : new List<PackingItem>();
+
+            AddTakingBackpackPoints(packed);
+            AddTimerPoints(); AddValvePoints();
+            AddWindowPoints(); AddPackingPoints(packed);
             
             int totalPoints = _windowPoints + _waterValveTask +
             _drawerTask + _fuseboxTask +
@@ -158,32 +164,37 @@ namespace score_system
 
         public string GetEndingText()
         {
+            var endString = "";
             if (leftOnTime)
             {
                 if (!mapDone)
                 {
-                    if (Random.value < 0.5f) return Endings.Ending1;
+                    if (UnityEngine.Random.value < 0.5f) endString = Endings.Ending1;
+                    else endString = Endings.Ending6;
                 }
 
                 if (chosenShelter == MapChoice.DesignatedShelter)
                 {
-                    if (windowDone && fuseboxDone && valveDone && drawerDone) return Endings.Ending3;
-                    if (!windowDone || !fuseboxDone || !valveDone || !drawerDone) return Endings.Ending5;
+                    if (windowDone && fuseboxDone && valveDone && drawerDone) endString = Endings.Ending3;
+                    if (!windowDone || !fuseboxDone || !valveDone || !drawerDone) endString = Endings.Ending5;
                 }
 
                 if (chosenShelter == MapChoice.Hill)
                 {
                     if (packingDone && tookBackpack)
                     {
-                        if (windowDone && fuseboxDone && valveDone && drawerDone) return Endings.Ending3;
-                        if (!windowDone || !fuseboxDone || !valveDone || !drawerDone) return Endings.Ending5;
+                        if (windowDone && fuseboxDone && valveDone && drawerDone) endString = Endings.Ending3;
+                        if (!windowDone || !fuseboxDone || !valveDone || !drawerDone) endString = Endings.Ending5;
                     }
 
-                    if (!packingDone || !tookBackpack) return Endings.Ending4;
+                    if (!packingDone || !tookBackpack) endString = Endings.Ending4;
                 }
             }
-
-            return Endings.Ending2;
+            else {
+                endString = Endings.Ending2;
+            }
+            Console.WriteLine(endString);
+            return endString;
         }
 
         public void SaveToSupabase()

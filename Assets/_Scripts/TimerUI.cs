@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using score_system;
 
 public class TimerUI : MonoBehaviour
 {
@@ -15,14 +16,17 @@ public class TimerUI : MonoBehaviour
 
     private void Update()
     {
-        if (GameTimer.Instance == null || timerText == null)
+            Debug.Log($"phase2: {ScoreScript.Instance?.phase2}, timerText null: {timerText == null}, GameTimer null: {GameTimer.Instance == null}");
+        if (GameTimer.Instance == null || timerText == null || ScoreScript.Instance == null || !ScoreScript.Instance.phase2) {
             return;
-
+        }
+        else {
         float time = GameTimer.Instance.TimeLeft;
         int minutes = Mathf.FloorToInt(time / 60f);
         int seconds = Mathf.FloorToInt(time % 60f);
 
         timerText.text = $"{minutes:00}:{seconds:00}";
         timerText.color = time <= warningThreshold ? warningColor : normalColor;
+        }
     }
 }

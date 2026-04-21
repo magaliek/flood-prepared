@@ -163,7 +163,7 @@ public class FuseBoxTask : MonoBehaviour
 
     private void RefreshCurrentSceneDimming()
     {
-        RoomDimmer dimmer = FindObjectOfType<RoomDimmer>();
+        RoomDimmer dimmer = FindFirstObjectByType<RoomDimmer>();
         if (dimmer != null)
             dimmer.ApplyState();
     }

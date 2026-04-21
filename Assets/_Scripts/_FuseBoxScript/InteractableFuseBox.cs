@@ -26,7 +26,7 @@ public class InteractableFuseBox : MonoBehaviour
 
     private void Update()
     {
-        if (!playerInRange)
+        if (!playerInRange || !ScoreScript.Instance.phase2)
             return;
 
         if (!isPowerOff)

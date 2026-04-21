@@ -46,10 +46,10 @@ public class GameTimer : MonoBehaviour
         if (FloodStarted)
             return;
 
-        FloodStarted = true;
+    FloodStarted = true;
     //Floood audio
-        FloodRise flood = FindObjectOfType<FloodRise>();
-        if (flood != null)
+    FloodRise flood = FindFirstObjectByType<FloodRise>();
+    if (flood != null)
             flood.StartFlood();
     }
 }

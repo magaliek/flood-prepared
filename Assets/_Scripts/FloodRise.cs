@@ -1,4 +1,6 @@
 using UnityEngine;
+using score_system;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class FloodRise : MonoBehaviour
 {
@@ -33,7 +35,7 @@ public class FloodRise : MonoBehaviour
 
     public void StartFlood()
     {
-        flooding = true;
+        flooding = ScoreScript.Instance.phase2;
     }
 
     private void Update()

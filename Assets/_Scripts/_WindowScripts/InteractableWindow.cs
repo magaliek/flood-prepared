@@ -1,4 +1,6 @@
 using UnityEngine;
+using score_system;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class InteractableWindow : MonoBehaviour
 {
@@ -29,7 +31,7 @@ public class InteractableWindow : MonoBehaviour
 
     private void Update()
     {
-        if (!playerInRange)
+        if (!playerInRange || ScoreScript.Instance.phase2)
             return;
 
         UpdatePrompt();
@@ -79,6 +81,7 @@ public class InteractableWindow : MonoBehaviour
         if (sealedVisual) sealedVisual.SetActive(true);
 
         if (promptUI) promptUI.Show("Window sealed");
+        ScoreScript.Instance.windowDone = true;
     }
 
     public void CancelSealMinigame()
@@ -88,7 +91,7 @@ public class InteractableWindow : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player") && !ScoreScript.Instance.windowDone) return;
 
         playerInRange = true;
         UpdatePrompt();
