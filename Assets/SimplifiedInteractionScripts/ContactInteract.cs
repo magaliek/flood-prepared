@@ -1,15 +1,16 @@
 using UnityEngine;
 using score_system;
 
-namespace interactable_furniture
+namespace SimplifiedInteractionScripts
 {
-    public class SimplifiedInteractScript : MonoBehaviour
+    public class ContactInteract : MonoBehaviour
     {
         [SerializeField] private GameObject panel;
         private bool _playerNearby = false;
 
         void OnCollisionEnter2D(Collision2D col)
         {
+            if (ScoreScript.Instance.phase2) return;
             if (col.gameObject.CompareTag("Player"))
                 _playerNearby = true;
         }
@@ -22,7 +23,7 @@ namespace interactable_furniture
 
         void Update()
         {
-            if (_playerNearby && Input.GetKeyDown(KeyCode.Return))
+            if (_playerNearby && Input.GetKeyDown(KeyCode.Return) && !ScoreScript.Instance.notebookDone)
                 panel.SetActive(true);
         }
     }
