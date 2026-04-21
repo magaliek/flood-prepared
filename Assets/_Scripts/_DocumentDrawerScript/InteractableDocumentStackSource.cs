@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using score_system;
 
 public class InteractableDocumentStackSource : MonoBehaviour, IInteractable
 {
@@ -65,5 +66,12 @@ public class InteractableDocumentStackSource : MonoBehaviour, IInteractable
         }
 
         return count;
+    }
+
+    private void DisableWhenEmpty()
+    {
+        var col = GetComponent<Collider2D>();
+        if (col != null) col.enabled = false;
+        ScoreScript.Instance.drawerDone = true;
     }
 }
