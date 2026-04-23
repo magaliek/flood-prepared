@@ -20,7 +20,7 @@ public class RoomDimmer : MonoBehaviour
         ApplyState();
     }
 
-    public void ApplyState()
+public void ApplyState()
 {
     if (darkOverlay == null || PowerState.Instance == null) return;
 
@@ -34,30 +34,35 @@ public class RoomDimmer : MonoBehaviour
         case RoomType.Hallway:    isOff = PowerState.Instance.hallwayOff;    break;
     }
 
+    bool allOff = PowerState.Instance.kitchenOff &&
+                  PowerState.Instance.livingRoomOff &&
+                  PowerState.Instance.bathroomOff &&
+                  PowerState.Instance.bedroomOff &&
+                  PowerState.Instance.hallwayOff;
+
     StopAllCoroutines();
 
-    if (isOff)
+    if (isOff && allOff)
         StartCoroutine(FadeIn());
-    else
+    else if (!isOff)
         StartCoroutine(FadeOut());
 }
 
 IEnumerator FadeIn()
 {
-    darkOverlay.SetActive(true); // enable first so it's visible to fade in
+    darkOverlay.SetActive(true);
     SpriteRenderer sr = darkOverlay.GetComponent<SpriteRenderer>();
     float duration = 1f;
     float elapsed = 0f;
-    Color initialColor = sr.color;
-
+    float startAlpha = sr.color.a;
     while (elapsed < duration)
     {
         elapsed += Time.deltaTime;
-        float alpha = Mathf.Lerp(0f, 1f, elapsed / duration);
-        sr.color = new Color(initialColor.r, initialColor.g, initialColor.b, alpha);
+        float alpha = Mathf.Lerp(startAlpha, 0.6f, elapsed / duration);
+        sr.color = new Color(0f, 0f, 0f, alpha);
         yield return null;
     }
-    sr.color = new Color(initialColor.r, initialColor.g, initialColor.b, 1f);
+    sr.color = new Color(0f, 0f, 0f, 0.6f);
 }
 
 IEnumerator FadeOut()
@@ -65,16 +70,15 @@ IEnumerator FadeOut()
     SpriteRenderer sr = darkOverlay.GetComponent<SpriteRenderer>();
     float duration = 1f;
     float elapsed = 0f;
-    Color initialColor = sr.color;
-
+    float startAlpha = sr.color.a;
     while (elapsed < duration)
     {
         elapsed += Time.deltaTime;
-        float alpha = Mathf.Lerp(1f, 0f, elapsed / duration);
-        sr.color = new Color(initialColor.r, initialColor.g, initialColor.b, alpha);
+        float alpha = Mathf.Lerp(startAlpha, 0f, elapsed / duration);
+        sr.color = new Color(0f, 0f, 0f, alpha);
         yield return null;
     }
-    sr.color = new Color(initialColor.r, initialColor.g, initialColor.b, 0f);
-    darkOverlay.SetActive(false); // disable AFTER fade completes, not before
+    sr.color = new Color(0f, 0f, 0f, 0f);
+    darkOverlay.SetActive(false);
 }
 }

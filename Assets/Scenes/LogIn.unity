@@ -2335,14 +2335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 145a110a1ac741e7bbafd4f3f47b7c3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::account.GameManager
-  makeAccountPanel: {fileID: 269230158}
-  usernamePanel: {fileID: 1351352253}
-  instructionsPanel: {fileID: 1506075455}
-  bPreparedPanel: {fileID: 2019191040}
-  usernameInput: {fileID: 412485439}
-  passwordInput: {fileID: 1438145278}
-  usernameErrorText: {fileID: 1435059146}
-  makeAccountErrorText: {fileID: 898784849}
 --- !u!114 &790160987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5568,19 +5560,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2058647388}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1388446017}
-        m_TargetAssemblyTypeName: MenuScripts.menuScript, Assembly-CSharp
-        m_MethodName: showUsername
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2058647388
 MonoBehaviour:
   m_ObjectHideFlags: 0

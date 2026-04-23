@@ -4,7 +4,6 @@ using System.Security.Cryptography;
 using System.Text;
 using maggies_awesome_score_system;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 namespace MenuScripts
 {
@@ -17,66 +16,29 @@ namespace MenuScripts
         public string PendingUsername { get; private set; }
         public string PendingPassword { get; private set; }
 
-        [SerializeField] private GameObject makeAccountPanel;
-        [SerializeField] private GameObject usernamePanel;
-        [SerializeField] private GameObject instructionsPanel;
-        [SerializeField] private GameObject bPreparedPanel;
-
-        [SerializeField] private TMP_InputField usernameInput;
-        [SerializeField] private TMP_InputField passwordInput;
-
-        [SerializeField] private TMP_Text usernameErrorText;
-        [SerializeField] private TMP_Text makeAccountErrorText;
-
         void Awake()
         {
-            if (Instance != null)
-            {
-                Destroy(gameObject);
-                return;
-            }
-
+            if (Instance != null) { Destroy(gameObject); return; }
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
 
-        void Start()
+        // Called by UsernameScript with its own field references passed in
+        public void TryLogin(string username, string password,
+            System.Action<string> onError,
+            System.Action showMakeAccountPanel)
         {
-            makeAccountPanel.SetActive(false);
-            usernamePanel.SetActive(false);
-            instructionsPanel.SetActive(false);
-            bPreparedPanel.SetActive(false);
+            StartCoroutine(Login(username, password, onError, showMakeAccountPanel));
         }
 
-        // Called by Play button on usernamePanel
-        public void OnPlayClick()
+        public void TryRegister(System.Action<string> onError)
         {
-            string username = usernameInput.text.Trim();
-            string password = passwordInput.text;
-
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-            {
-                usernameErrorText.text = "Please enter a username and password.";
-                return;
-            }
-
-            StartCoroutine(Login(username, password));
+            StartCoroutine(Register(PendingUsername, PendingPassword, onError));
         }
 
-        // Called by Yes button on makeAccountPanel
-        public void OnYesClick()
-        {
-            StartCoroutine(Register(PendingUsername, PendingPassword));
-        }
-
-        // Called by No button on makeAccountPanel
-        public void OnNoClick()
-        {
-            makeAccountPanel.SetActive(false);
-            makeAccountErrorText.text = "";
-        }
-
-        private IEnumerator Login(string username, string password)
+        private IEnumerator Login(string username, string password,
+            System.Action<string> onError,
+            System.Action showMakeAccountPanel)
         {
             string hash = HashPassword(password);
             string query = $"username=eq.{username}&password_hash=eq.{hash}";
@@ -85,13 +47,15 @@ namespace MenuScripts
             {
                 if (response == null)
                 {
-                    usernameErrorText.text = "Something went wrong. Try again.";
+                    onError?.Invoke("Something went wrong. Try again.");
                     return;
                 }
 
                 if (response == "[]")
                 {
-                    StartCoroutine(CheckIfUsernameExists(username));
+                    // Credentials don't match — check if username exists at all
+                    StartCoroutine(CheckIfUsernameExists(username, password,
+                        onError, showMakeAccountPanel));
                 }
                 else
                 {
@@ -102,7 +66,9 @@ namespace MenuScripts
             }));
         }
 
-        private IEnumerator CheckIfUsernameExists(string username)
+        private IEnumerator CheckIfUsernameExists(string username, string password,
+            System.Action<string> onError,
+            System.Action showMakeAccountPanel)
         {
             string query = $"username=eq.{username}";
 
@@ -110,19 +76,21 @@ namespace MenuScripts
             {
                 if (response == "[]")
                 {
-                    SetPendingCredentials(usernameInput.text.Trim(), passwordInput.text);
-                    makeAccountPanel.SetActive(true);
-                    makeAccountPanel.transform.SetAsLastSibling();
-                    makeAccountErrorText.text = "";
+                    // Username doesn't exist at all — offer to register
+                    // Save credentials NOW before touching any UI
+                    SetPendingCredentials(username, password);
+                    showMakeAccountPanel?.Invoke();
                 }
                 else
                 {
-                    usernameErrorText.text = "Incorrect password.";
+                    // Username exists but password was wrong
+                    onError?.Invoke("Incorrect password.");
                 }
             }));
         }
 
-        private IEnumerator Register(string username, string password)
+        private IEnumerator Register(string username, string password,
+            System.Action<string> onError)
         {
             string hash = HashPassword(password);
             string json = $"{{\"username\":\"{username}\",\"password_hash\":\"{hash}\"}}";
@@ -130,17 +98,14 @@ namespace MenuScripts
             yield return StartCoroutine(SupabaseClient.Instance.Post("users", json, success =>
             {
                 if (success)
-                {
-                    StartCoroutine(LoginAfterRegister(username, password));
-                }
+                    StartCoroutine(LoginAfterRegister(username, password, onError));
                 else
-                {
-                    makeAccountErrorText.text = "Failed to create account. Try again.";
-                }
+                    onError?.Invoke("Failed to create account. Try again.");
             }));
         }
 
-        private IEnumerator LoginAfterRegister(string username, string password)
+        private IEnumerator LoginAfterRegister(string username, string password,
+            System.Action<string> onError)
         {
             string hash = HashPassword(password);
             string query = $"username=eq.{username}&password_hash=eq.{hash}";
@@ -149,14 +114,13 @@ namespace MenuScripts
             {
                 if (response != null && response != "[]")
                 {
-                    string trimmed = response.Trim('[', ']');
-                    var userData = JsonUtility.FromJson<UserData>(trimmed);
+                    var userData = ParseUser(response);
                     SetPlayer(userData.id, userData.username);
                     SceneManager.LoadScene("Hallway");
                 }
                 else
                 {
-                    makeAccountErrorText.text = "Login after register failed. Try again.";
+                    onError?.Invoke("Login after register failed. Try again.");
                 }
             }));
         }
@@ -165,7 +129,7 @@ namespace MenuScripts
         {
             using var sha = SHA256.Create();
             byte[] bytes = sha.ComputeHash(Encoding.UTF8.GetBytes(password));
-            StringBuilder sb = new StringBuilder();
+            var sb = new System.Text.StringBuilder();
             foreach (byte b in bytes) sb.Append(b.ToString("x2"));
             return sb.ToString();
         }
@@ -177,11 +141,7 @@ namespace MenuScripts
         }
 
         [System.Serializable]
-        private class UserData
-        {
-            public string id;
-            public string username;
-        }
+        private class UserData { public string id; public string username; }
 
         public void SetPlayer(string id, string username)
         {

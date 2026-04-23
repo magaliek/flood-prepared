@@ -23,8 +23,6 @@ namespace MenuScripts
         {
             bPreparedPanel.SetActive(true);
         }
-
-
     
     }
 }
