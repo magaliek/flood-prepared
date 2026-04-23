@@ -20,14 +20,27 @@ public class InteractableWindow : MonoBehaviour
     private bool isSealed;
     private bool minigameOpen;
 
-    private void Start()
+private void Start()
+{
+    bool done = ScoreScript.Instance != null && ScoreScript.Instance.windowDone;
+
+    if (done)
+    {
+        if (openVisual) openVisual.SetActive(false);
+        if (closedVisual) closedVisual.SetActive(false);
+        if (sealedVisual) sealedVisual.SetActive(true);
+        isClosed = true;
+        isSealed = true;
+    }
+    else
     {
         if (openVisual) openVisual.SetActive(true);
         if (closedVisual) closedVisual.SetActive(false);
         if (sealedVisual) sealedVisual.SetActive(false);
-
-        if (promptUI) promptUI.Hide();
     }
+
+    if (promptUI) promptUI.Hide();
+}
 
     private void Update()
     {

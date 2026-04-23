@@ -981,7 +981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &269230159
 RectTransform:
   m_ObjectHideFlags: 0
@@ -994,6 +994,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1870178689}
   - {fileID: 1321142439}
   - {fileID: 1490835012}
   - {fileID: 566306128}
@@ -1177,8 +1178,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1033425669}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.7971655}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1680,7 +1681,6 @@ GameObject:
   - component: {fileID: 546088101}
   - component: {fileID: 546088100}
   - component: {fileID: 546088099}
-  - component: {fileID: 546088098}
   m_Layer: 5
   m_Name: menuPanel
   m_TagString: Untagged
@@ -1688,21 +1688,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &546088098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546088097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51f73eb627d1d4ca3a88698ef0f48545, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  userNamePanel: {fileID: 2058647385}
-  gameInstrcutionPanel: {fileID: 429995297}
-  bPreparedPanel: {fileID: 367521953}
 --- !u!114 &546088099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1847,8 +1832,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 790160986}
-        m_TargetAssemblyTypeName: account.GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1870178690}
+        m_TargetAssemblyTypeName: MenuScripts.MakeAccountScript, Assembly-CSharp
         m_MethodName: OnNoClick
         m_Mode: 1
         m_Arguments:
@@ -2746,6 +2731,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853022150}
   m_CullTransparentMesh: 1
+--- !u!1 &866446752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 866446753}
+  - component: {fileID: 866446754}
+  m_Layer: 5
+  m_Name: UserNameScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &866446753
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866446752}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1351352254}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &866446754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866446752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc305bde00d6e4226b7150fb4a83ae7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuScripts.UsernameScript
+  makeAccountPanel: {fileID: 269230158}
+  usernameInput: {fileID: 412485439}
+  passwordInput: {fileID: 1438145278}
+  errorText: {fileID: 1435059146}
 --- !u!1 &868293022
 GameObject:
   m_ObjectHideFlags: 0
@@ -3556,9 +3593,9 @@ RectTransform:
   m_Father: {fileID: 853022151}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1235480327
 MonoBehaviour:
@@ -3978,7 +4015,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1351352254
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3991,6 +4028,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 866446753}
   - {fileID: 738852844}
   - {fileID: 820483490}
   - {fileID: 412485438}
@@ -4067,7 +4105,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388446015}
-  m_LocalRotation: {x: -0, y: -0, z: -0.040733602, w: 0.99917006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4094,6 +4132,7 @@ MonoBehaviour:
   userNamePanel: {fileID: 1351352253}
   gameInstrcutionPanel: {fileID: 1506075455}
   bPreparedPanel: {fileID: 2019191040}
+  makeAccountPanel: {fileID: 269230158}
 --- !u!1 &1389130519
 GameObject:
   m_ObjectHideFlags: 0
@@ -4130,7 +4169,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.000030517578}
-  m_SizeDelta: {x: 0, y: 3888}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1389130521
 MonoBehaviour:
@@ -4805,8 +4844,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 790160986}
-        m_TargetAssemblyTypeName: account.GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1870178690}
+        m_TargetAssemblyTypeName: MenuScripts.MakeAccountScript, Assembly-CSharp
         m_MethodName: OnYesClick
         m_Mode: 1
         m_Arguments:
@@ -4872,7 +4911,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1506075456
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5023,8 +5062,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 790160986}
-        m_TargetAssemblyTypeName: account.GameManager, Assembly-CSharp
+      - m_Target: {fileID: 866446754}
+        m_TargetAssemblyTypeName: MenuScripts.UsernameScript, Assembly-CSharp
         m_MethodName: OnPlayClick
         m_Mode: 1
         m_Arguments:
@@ -5163,6 +5202,56 @@ MonoBehaviour:
   clickCursor: {fileID: 2800000, guid: 77197e28076446b4e9ea61195a708217, type: 3}
   defaultHotspot: {x: 0, y: 0}
   clickHotspot: {x: 0, y: 0}
+--- !u!1 &1870178688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1870178689}
+  - component: {fileID: 1870178690}
+  m_Layer: 5
+  m_Name: MakeAccountScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1870178689
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870178688}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 269230159}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -75.99997, y: -128}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1870178690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870178688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37228f0fc4c82471ca832ed735fae8ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuScripts.MakeAccountScript
+  makeAccountPanel: {fileID: 269230158}
+  errorText: {fileID: 898784849}
 --- !u!1 &1871264250
 GameObject:
   m_ObjectHideFlags: 0
@@ -5417,7 +5506,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2019191041
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5560,7 +5649,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2058647388}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1388446017}
+        m_TargetAssemblyTypeName: MenuScripts.menuScript, Assembly-CSharp
+        m_MethodName: showUsername
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2058647388
 MonoBehaviour:
   m_ObjectHideFlags: 0

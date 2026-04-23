@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using score_system;
 
 public class ZiplockBagUI : MonoBehaviour
 {
@@ -22,6 +23,13 @@ public class ZiplockBagUI : MonoBehaviour
     private void Start()
     {
         bagContentsPanel?.SetActive(false);
+
+        if (ScoreScript.Instance != null)
+        {
+            packedDocs.Clear();
+            packedDocs.AddRange(ScoreScript.Instance.takenDrawerDocs);
+        }
+
         ApplySprite();
     }
 
@@ -43,6 +51,7 @@ public class ZiplockBagUI : MonoBehaviour
     {
         if (doc == null) return;
         packedDocs.Add(doc);
+        ScoreScript.Instance?.takenDrawerDocs.Add(doc);
         RebuildGrid();
         ApplySprite();
     }

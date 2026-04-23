@@ -15,6 +15,7 @@ public class GameTimer : MonoBehaviour
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
+            transform.SetParent(null);
             return;
         }
 

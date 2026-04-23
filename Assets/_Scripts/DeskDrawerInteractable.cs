@@ -19,6 +19,11 @@ public class DeskDrawerInteractable : MonoBehaviour, IInteractable
             return;
         }
 
+        if (ScoreScript.Instance.drawerDone)
+        {
+            return;
+        }
+
         if (DrawerUI.Instance == null)
         {
             Debug.LogError("DrawerUI.Instance is null — is DrawerUI in the scene?");

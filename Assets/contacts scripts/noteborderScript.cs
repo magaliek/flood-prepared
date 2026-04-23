@@ -70,6 +70,12 @@ namespace contacts_scripts
             if (!contact.IsValidZone(zoneId))
             {
                 _outline.enabled = true;
+                _outline.effectColor = Color.red;
+            }
+            else if (contact.IsValidZone(zoneId))
+            {
+                _outline.enabled = true;
+                _outline.effectColor = Color.green;
             }
             else
             {

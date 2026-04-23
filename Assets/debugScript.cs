@@ -11,7 +11,7 @@ public class debugScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    { /**
         if (Input.GetMouseButtonDown(0))
     {
         var pointer = new UnityEngine.EventSystems.PointerEventData(
@@ -22,5 +22,6 @@ public class debugScript : MonoBehaviour
         foreach (var r in results)
             Debug.Log("Hit: " + r.gameObject.name);
     }
+    **/
     }
 }

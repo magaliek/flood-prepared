@@ -16,6 +16,7 @@ namespace packing_scripts
             foreach (PackingItem item in backpack.Packed.ToList())
             {
                 backpack.RemoveItem(item);
+                backpack.ResetMacros();
             }
         }
     }

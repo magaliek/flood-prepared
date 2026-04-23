@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
+using score_system;
 
 public class InteractionSystem : MonoBehaviour
 {
@@ -37,11 +39,19 @@ public class InteractionSystem : MonoBehaviour
 
     public void TryInteract()
     {
-        Debug.Log("TryInteract called. Current = " + (current == null ? "NULL" : current.GetType().Name));
+        //Debug.Log("TryInteract called. Current = " + (current == null ? "NULL" : current.GetType().Name));
 
         if (current == null) return;
 
-        Debug.Log("Interacting with: " + current.GetType().Name);
+        if (current is DrawerUI)
+        {
+            if (ScoreScript.Instance.drawerDone)
+            {
+                return;
+            }
+        }
+
+        //Debug.Log("Interacting with: " + current.GetType().Name);
         current.Interact();
 
         RefreshUI();
