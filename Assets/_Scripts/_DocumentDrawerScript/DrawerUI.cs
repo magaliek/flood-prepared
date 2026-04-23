@@ -86,7 +86,6 @@ public class DrawerUI : MonoBehaviour
 
             btn.onClick.AddListener(() =>
             {
-                Debug.Log("Button clicked: " + doc.displayName); // add this
                 Vector3 startPos = btn.transform.position;
                 Sprite sprite = iconImg?.sprite;
 

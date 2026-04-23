@@ -1235,7 +1235,7 @@ MonoBehaviour:
   carbs: 0
   protein: 43.105
   fat: 28.675
-  sodium: 2.035
+  sodium: 203.5
   water: 0
   weight: 0.145
   points: 3
@@ -1453,7 +1453,7 @@ MonoBehaviour:
   carbs: 52.68
   protein: 22.389
   fat: 6.585
-  sodium: 2.634
+  sodium: 263.4
   water: 0
   weight: 0.4
   points: 4
@@ -1809,7 +1809,7 @@ MonoBehaviour:
   carbs: 30.15
   protein: 2.97
   fat: 5.4
-  sodium: 0.225
+  sodium: 22.5
   water: 0
   weight: 0.06
   points: 5
@@ -2160,7 +2160,7 @@ MonoBehaviour:
   carbs: 49.4
   protein: 23.94
   fat: 4.56
-  sodium: 1.52
+  sodium: 152
   water: 0
   weight: 0.4
   points: 4
@@ -3598,7 +3598,7 @@ GameObject:
   - component: {fileID: 317715530}
   - component: {fileID: 317715529}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: ScoreManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3619,7 +3619,9 @@ MonoBehaviour:
   chosenShelter: 0
   packingDone: 0
   notebookDone: 0
+  notebookTaken: 0
   mapDone: 0
+  mapTaken: 0
   windowDone: 0
   valveDone: 0
   drawerDone: 0
@@ -3628,6 +3630,7 @@ MonoBehaviour:
   leftOnTime: 0
   tookBackpack: 0
   phase2: 0
+  takenDrawerDocs: []
 --- !u!4 &317715530
 Transform:
   m_ObjectHideFlags: 0
@@ -4380,7 +4383,7 @@ MonoBehaviour:
   carbs: 0
   protein: 19.08
   fat: 22.26
-  sodium: 1.06
+  sodium: 106
   water: 0
   weight: 0.12
   points: 3
@@ -7428,7 +7431,7 @@ MonoBehaviour:
   carbs: 160
   protein: 3.6
   fat: 1.2
-  sodium: 0.6
+  sodium: 60
   water: 0
   weight: 0.1
   points: 2
@@ -9120,7 +9123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::packing_scripts.DoneScriptP
   panel: {fileID: 931135734}
-  score: {fileID: 317715529}
 --- !u!4 &880424177
 Transform:
   m_ObjectHideFlags: 0
@@ -9280,7 +9282,7 @@ MonoBehaviour:
   carbs: 30.8
   protein: 10.08
   fat: 8.4
-  sodium: 0.728
+  sodium: 72.8
   water: 0
   weight: 0.06
   points: 5
@@ -11504,7 +11506,7 @@ MonoBehaviour:
   carbs: 106
   protein: 16.6
   fat: 68
-  sodium: 0.4
+  sodium: 40
   water: 0
   weight: 0.1
   points: 5
@@ -11811,7 +11813,7 @@ MonoBehaviour:
   carbs: 252
   protein: 29.2
   fat: 84
-  sodium: 5.2
+  sodium: 520
   water: 0
   weight: 0.15
   points: 2
@@ -12915,7 +12917,7 @@ MonoBehaviour:
   carbs: 25.2
   protein: 14.4
   fat: 77.4
-  sodium: 7.74
+  sodium: 774
   water: 0
   weight: 0.2
   points: 2
@@ -13623,7 +13625,7 @@ MonoBehaviour:
   carbs: 153.9
   protein: 31.35
   fat: 17.1
-  sodium: 2.85
+  sodium: 285
   water: 0
   weight: 0.2
   points: 3
@@ -14875,8 +14877,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1563162119}
-  - component: {fileID: 1563162121}
-  - component: {fileID: 1563162120}
   m_Layer: 0
   m_Name: Systems
   m_TagString: Untagged
@@ -14902,33 +14902,6 @@ Transform:
   - {fileID: 258490439}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1563162120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1563162118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0add8db4253438fbd9ecce52e62cc2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DocumentTaskController
-  requiredDocuments: []
-  folderProgressText: {fileID: 0}
-  scanButtonObject: {fileID: 0}
---- !u!114 &1563162121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1563162118}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3713d0646f950430ca2eecdc8206d988, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
 --- !u!1 &1564330818
 GameObject:
   m_ObjectHideFlags: 0
@@ -15853,7 +15826,7 @@ MonoBehaviour:
   carbs: 5.06
   protein: 13.2
   fat: 19.8
-  sodium: 1.1
+  sodium: 110
   water: 0
   weight: 0.17
   points: 3
@@ -16374,7 +16347,7 @@ MonoBehaviour:
   carbs: 46.36
   protein: 24.32
   fat: 1.9
-  sodium: 3.04
+  sodium: 304
   water: 0
   weight: 0.5
   points: 3

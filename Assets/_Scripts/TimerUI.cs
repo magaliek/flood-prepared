@@ -16,7 +16,6 @@ public class TimerUI : MonoBehaviour
 
     private void Update()
     {
-            Debug.Log($"phase2: {ScoreScript.Instance?.phase2}, timerText null: {timerText == null}, GameTimer null: {GameTimer.Instance == null}");
         if (GameTimer.Instance == null || timerText == null || ScoreScript.Instance == null || !ScoreScript.Instance.phase2) {
             return;
         }

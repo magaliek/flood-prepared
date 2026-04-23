@@ -21,9 +21,14 @@ namespace MenuScripts
             if (Instance != null) { Destroy(gameObject); return; }
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            #if UNITY_EDITOR
+            // Safety check: warn if not starting from the correct scene
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "LogIn")
+                Debug.LogWarning("GameManager: You should start Play from the Menu scene!");
+            #endif
         }
 
-        // Called by UsernameScript with its own field references passed in
         public void TryLogin(string username, string password,
             System.Action<string> onError,
             System.Action showMakeAccountPanel)

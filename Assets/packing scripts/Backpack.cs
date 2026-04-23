@@ -149,7 +149,7 @@ namespace packing_scripts
             weightText.UpdateText($"Weight: {_weight}kg / {_maxWeightScript.Max}");
         }
 
-        private PackingItem AddNewItem(PackingItem newItem) //maybe useless
+        private PackingItem AddNewItem(PackingItem newItem)
         {
             try
             {
@@ -163,14 +163,30 @@ namespace packing_scripts
             return newItem;
         }
 
+        public void ResetMacros()
+        {
+            _weight = 0f;
+            weightText.UpdateText($"Weight: {_weight}kg");
+            _calories = 0f;
+            calorieText.UpdateText($"Calories: {_calories}kcal");
+            _carbs = 0f;
+            carbsText.UpdateText($"Carbs: {_carbs}g");
+            _protein = 0f;
+            proteinText.UpdateText($"Protein: {_protein}g");
+            _fat = 0f;
+            fatText.UpdateText($"Fat: {_fat}g");
+            _sodium = 0f;
+            sodiumText.UpdateText($"Sodium: {_sodium}mg");
+            _water = 0f;
+            waterText.UpdateText($"Water: {_water}L");
+        }
+
         public void RemoveItem(PackingItem item)
         {
             try
             {
                 _packed.Remove(item);
                 item.ResetItem();
-                _weight = 0f;
-                weightText.UpdateText($"Weight: {_weight}kg");
             }
             catch (Exception e)
             {
