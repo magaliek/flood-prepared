@@ -6,18 +6,30 @@ namespace SimplifiedInteractions
     public class ContactInteraction : MonoBehaviour
     {
         [SerializeField] private GameObject panel;
+        [SerializeField] private GameObject popupText; 
+
         private bool _playerNearby = false;
 
         void OnCollisionEnter2D(Collision2D col)
         {
             if (col.gameObject.CompareTag("Player"))
+            {
                 _playerNearby = true;
+
+                if (popupText != null) // NY
+                    popupText.SetActive(true);
+            }
         }
 
         void OnCollisionExit2D(Collision2D col)
         {
             if (col.gameObject.CompareTag("Player"))
+            {
                 _playerNearby = false;
+
+                if (popupText != null) // NY
+                    popupText.SetActive(false);
+            }
         }
 
         void Update()
