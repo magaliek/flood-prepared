@@ -1,4 +1,6 @@
 using UnityEngine;
+using score_system;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class InteractableWaterValve : MonoBehaviour
 {
@@ -19,12 +21,12 @@ public class InteractableWaterValve : MonoBehaviour
 
     private void Update()
     {
-        if (!playerInRange)
+        if (!playerInRange || !ScoreScript.Instance.phase2)
             return;
 
         UpdatePrompt();
 
-        if (!isDone && !taskOpen && Input.GetKeyDown(KeyCode.E))
+        if (!isDone && !taskOpen && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)))
         {
             if (valveTask)
             {
@@ -39,7 +41,7 @@ public class InteractableWaterValve : MonoBehaviour
         if (!promptUI) return;
 
         if (!isDone)
-            promptUI.Show("Press E to shut off water");
+            promptUI.Show("Press Enter to shut off water");
         else
             promptUI.Show("Water shut off");
     }
@@ -51,6 +53,7 @@ public class InteractableWaterValve : MonoBehaviour
 
         if (promptUI)
             promptUI.Show("Water shut off");
+        ScoreScript.Instance.valveDone = isDone;
     }
 
     public void CancelTask()

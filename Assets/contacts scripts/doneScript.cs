@@ -1,4 +1,5 @@
 ﻿using packing_scripts;
+using score_system;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,7 @@ namespace contacts_scripts
             foreach (var zone in validZones)
             {
                 Outline outline = zone.GetComponent<Outline>();
-                if (outline.enabled) anyRed = true;
+                if (outline.effectColor == Color.red) anyRed = true;
                 if (zone.isEmpty) _anyEmpty = true;
             }
             return anyRed;
@@ -32,10 +33,12 @@ namespace contacts_scripts
                 GetComponent<AudioSource>().Play();
                 _anyEmpty = false;
                 panel.SetActive(false);
-            };
+            } else {
+            ScoreScript.Instance.notebookDone = true;
             _anyEmpty = false;
             pNoteBookScript.ChangeImage();
             panel.SetActive(false);
+            }
         }
     }
 }

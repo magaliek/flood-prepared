@@ -1,4 +1,6 @@
 using UnityEngine;
+using score_system;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class InteractableWindow : MonoBehaviour
 {
@@ -18,29 +20,42 @@ public class InteractableWindow : MonoBehaviour
     private bool isSealed;
     private bool minigameOpen;
 
-    private void Start()
+private void Start()
+{
+    bool done = ScoreScript.Instance != null && ScoreScript.Instance.windowDone;
+
+    if (done)
+    {
+        if (openVisual) openVisual.SetActive(false);
+        if (closedVisual) closedVisual.SetActive(false);
+        if (sealedVisual) sealedVisual.SetActive(true);
+        isClosed = true;
+        isSealed = true;
+    }
+    else
     {
         if (openVisual) openVisual.SetActive(true);
         if (closedVisual) closedVisual.SetActive(false);
         if (sealedVisual) sealedVisual.SetActive(false);
-
-        if (promptUI) promptUI.Hide();
     }
+
+    if (promptUI) promptUI.Hide();
+}
 
     private void Update()
     {
-        if (!playerInRange)
+        if (!playerInRange || ScoreScript.Instance.phase2)
             return;
 
         UpdatePrompt();
 
-        if (!isClosed && Input.GetKeyDown(KeyCode.E))
+        if (!isClosed && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)))
         {
             CloseWindow();
             return;
         }
 
-        if (isClosed && !isSealed && !minigameOpen && Input.GetKeyDown(KeyCode.E))
+        if (isClosed && !isSealed && !minigameOpen && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)))
         {
             if (sealMinigame)
             {
@@ -55,9 +70,9 @@ public class InteractableWindow : MonoBehaviour
         if (!promptUI) return;
 
         if (!isClosed)
-            promptUI.Show("Press E to close window");
+            promptUI.Show("Press Enter to close window");
         else if (!isSealed)
-            promptUI.Show("Press E to seal window");
+            promptUI.Show("Press Enter to seal window");
         else
             promptUI.Show("Window sealed");
     }
@@ -79,6 +94,7 @@ public class InteractableWindow : MonoBehaviour
         if (sealedVisual) sealedVisual.SetActive(true);
 
         if (promptUI) promptUI.Show("Window sealed");
+        ScoreScript.Instance.windowDone = true;
     }
 
     public void CancelSealMinigame()
@@ -88,7 +104,7 @@ public class InteractableWindow : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player") && !ScoreScript.Instance.windowDone) return;
 
         playerInRange = true;
         UpdatePrompt();

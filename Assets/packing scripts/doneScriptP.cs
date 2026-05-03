@@ -6,7 +6,6 @@ namespace packing_scripts
     public class DoneScriptP : MonoBehaviour
     {
         [SerializeField] private GameObject panel;
-        [SerializeField] private ScoreScript score;
 
         public void OnDoneClicked()
         {
@@ -25,6 +24,9 @@ namespace packing_scripts
                 tFat += item.Fat;
                 tSodium += item.Sodium;
                 tWater += item.Water;
+                
+                if (item is Notebook) ScoreScript.Instance.notebookTaken = true;
+                if (item is Map) ScoreScript.Instance.mapTaken = true;
             }
             
             var meetsReq = (tCal >= (1190 * 3)) &&
@@ -34,7 +36,7 @@ namespace packing_scripts
                            (tSodium >= (500 * 3)) &&
                            (tWater >= (2.5 * 3));
 
-            if (meetsReq) score.packingDone = true;
+            if (meetsReq) ScoreScript.Instance.packingDone = true;
             
             panel.SetActive(false);
         }

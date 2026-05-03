@@ -1,14 +1,14 @@
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using score_system;
 
 public class ZiplockBagUI : MonoBehaviour
 {
-    [SerializeField] private GameObject bagButton;
-    [SerializeField] private GameObject bagTitle;
     [SerializeField] private GameObject bagContentsPanel;
     [SerializeField] private Transform bagGrid;
-    [SerializeField] private GameObject itemPrefab;
-    [SerializeField] private Canvas canvas;
+    [SerializeField] private GameObject itemPrefab; // just an Image + TMP_Text prefab
 
     [Header("Bag Sprites")]
     [SerializeField] private Image bagButtonImage;
@@ -17,116 +17,91 @@ public class ZiplockBagUI : MonoBehaviour
     [SerializeField] private Sprite closedMediumBagSprite;
     [SerializeField] private Sprite closedFullBagSprite;
 
+    private readonly List<DocumentData> packedDocs = new();
     private bool isOpen = false;
 
     private void Start()
     {
-        RefreshVisibility();
-        ApplyVisualState();
-    }
+        bagContentsPanel?.SetActive(false);
 
-    public void ToggleBag()
-    {
-        if (InventoryManager.Instance == null || InventoryManager.Instance.Items.Count == 0)
-            return;
+        if (ScoreScript.Instance != null)
+        {
+            packedDocs.Clear();
+            packedDocs.AddRange(ScoreScript.Instance.takenDrawerDocs);
+        }
 
-        isOpen = !isOpen;
-        ApplyVisualState();
-
-        if (isOpen)
-            RebuildBag();
+        ApplySprite();
     }
 
     public void OpenBagForDrawer()
     {
         isOpen = true;
-        ApplyVisualState();
-        RebuildBag();
+        bagContentsPanel?.SetActive(true);
+        ApplySprite();
     }
 
     public void CloseBagAfterDrawer()
     {
         isOpen = false;
-        ApplyVisualState();
+        bagContentsPanel?.SetActive(false);
+        ApplySprite();
     }
 
-    public void UpdateBagVisual()
+    public void AddDocument(DocumentData doc)
     {
-        RefreshVisibility();
-        ApplyVisualState();
-
-        if (isOpen)
-            RebuildBag();
+        if (doc == null) return;
+        packedDocs.Add(doc);
+        ScoreScript.Instance?.takenDrawerDocs.Add(doc);
+        RebuildGrid();
+        ApplySprite();
     }
 
-    public void RefreshVisibility()
+    private void RebuildGrid()
     {
-        bool hasItems = InventoryManager.Instance != null && InventoryManager.Instance.Items.Count > 0;
-
-        if (bagButton != null)
-            bagButton.SetActive(hasItems);
-
-        if (!hasItems)
-        {
-            isOpen = false;
-        }
-    }
-
-    private void ApplyVisualState()
-    {
-        bool hasItems = InventoryManager.Instance != null && InventoryManager.Instance.Items.Count > 0;
-
-        if (bagTitle != null)
-            bagTitle.SetActive(isOpen && hasItems);
-
-        if (bagContentsPanel != null)
-            bagContentsPanel.SetActive(isOpen && hasItems);
-
-        if (bagButtonImage == null || !hasItems)
-            return;
-
-        int count = InventoryManager.Instance.Items.Count;
-
-        if (isOpen)
-        {
-            if (openBagSprite != null)
-                bagButtonImage.sprite = openBagSprite;
-        }
-        else
-        {
-            if (count <= 0)
-            {
-                if (closedEmptyBagSprite != null)
-                    bagButtonImage.sprite = closedEmptyBagSprite;
-            }
-            else if (count <= 3)
-            {
-                if (closedMediumBagSprite != null)
-                    bagButtonImage.sprite = closedMediumBagSprite;
-            }
-            else
-            {
-                if (closedFullBagSprite != null)
-                    bagButtonImage.sprite = closedFullBagSprite;
-            }
-        }
-    }
-
-    private void RebuildBag()
-    {
-        if (bagGrid == null || itemPrefab == null || canvas == null || InventoryManager.Instance == null)
-            return;
+        
+        if (bagGrid == null || itemPrefab == null) return;
 
         foreach (Transform child in bagGrid)
             Destroy(child.gameObject);
 
-        foreach (var doc in InventoryManager.Instance.Items)
+        foreach (var doc in packedDocs)
         {
             var go = Instantiate(itemPrefab, bagGrid);
-            var item = go.GetComponent<DraggableInventoryItem>();
 
-            if (item != null)
-                item.Init(doc, canvas);
+            var iconT = go.transform.Find("Icon");
+            if (iconT != null)
+            {
+                var img = iconT.GetComponent<Image>();
+                if (img != null) { img.sprite = doc.icon; img.preserveAspect = true; }
+            }
+
+            var label = go.GetComponentInChildren<TMP_Text>();
+            if (label != null) label.text = doc.displayName;
         }
+    }
+
+    private void ApplySprite()
+    {
+        if (bagButtonImage == null) return;
+        int count = packedDocs.Count;
+
+        if (isOpen && openBagSprite != null)
+            { bagButtonImage.sprite = openBagSprite; return; }
+
+        if (count == 0 && closedEmptyBagSprite != null)
+            bagButtonImage.sprite = closedEmptyBagSprite;
+        else if (count <= 3 && closedMediumBagSprite != null)
+            bagButtonImage.sprite = closedMediumBagSprite;
+        else if (closedFullBagSprite != null)
+            bagButtonImage.sprite = closedFullBagSprite;
+    }
+
+    public void ToggleBag()
+    {
+        if (packedDocs.Count == 0) return;
+        isOpen = !isOpen;
+        bagContentsPanel?.SetActive(isOpen);
+        ApplySprite();
+        if (isOpen) RebuildGrid();
     }
 }

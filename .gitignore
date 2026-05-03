@@ -12,3 +12,9 @@
 *.sln
 .vscode/
 .plastic/
+# Mac / exported builds
+*.zip
+*.app
+FloodPreparedness game.zip
+FloodPreparedness game/
+Floodpreparedness test.app/

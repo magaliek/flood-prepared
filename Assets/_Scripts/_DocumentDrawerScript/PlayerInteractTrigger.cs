@@ -31,7 +31,6 @@ public class PlayerInteractTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         var interactable = FindInteractable(other);
-        Debug.Log("ENTER: " + other.name + " -> " + (interactable == null ? "NULL" : interactable.GetType().Name));
 
         if (interactable != null)
             interactionSystem.SetCurrent(interactable);
@@ -40,7 +39,6 @@ public class PlayerInteractTrigger : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         var interactable = FindInteractable(other);
-        Debug.Log("EXIT: " + other.name + " -> " + (interactable == null ? "NULL" : interactable.GetType().Name));
 
         if (interactable != null)
             interactionSystem.ClearCurrent(interactable);

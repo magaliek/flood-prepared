@@ -3,6 +3,7 @@ using MenuScripts;
 using maggies_awesome_score_system;
 using packing_scripts;
 using UnityEngine;
+using System;
 
 namespace score_system
 {
@@ -31,7 +32,9 @@ namespace score_system
         public MapChoice chosenShelter;
         public bool packingDone;
         public bool notebookDone;
+        public bool notebookTaken;
         public bool mapDone;
+        public bool mapTaken;
         public bool windowDone;
         public bool valveDone;
         public bool drawerDone;
@@ -39,6 +42,10 @@ namespace score_system
         public bool notificationsDone;
         public bool leftOnTime;
         public bool tookBackpack;
+
+        public bool phase2;
+
+        public List<DocumentData> takenDrawerDocs = new List<DocumentData>();
 
         public void Awake()
         {
@@ -92,7 +99,7 @@ namespace score_system
 
         private void AddNotebookPoints()
         {
-            if (!notebookDone) return;
+            if (!notebookDone || !notebookTaken) return;
             _notebookPoints += 15;
         }
 
@@ -112,7 +119,7 @@ namespace score_system
 
         private void AddMapPoints()
         {
-            if (!mapDone) return;
+            if (!mapDone || !mapTaken) return;
             switch (chosenShelter)
             {
                 case MapChoice.Hill:
@@ -143,9 +150,12 @@ namespace score_system
             ResetPoints(); AddDrawerPoints();
             AddFuseboxPoints(); AddMapPoints();
             AddNotebookPoints(); AddNotificationPoints();
-            AddTakingBackpackPoints(Backpack.Instance.Packed); 
-            AddTimerPoints(); AddValvePoints(); 
-            AddWindowPoints(); AddPackingPoints(Backpack.Instance.Packed);
+            
+            var packed = Backpack.Instance != null ? Backpack.Instance.Packed : new List<PackingItem>();
+
+            AddTakingBackpackPoints(packed);
+            AddTimerPoints(); AddValvePoints();
+            AddWindowPoints(); AddPackingPoints(packed);
             
             int totalPoints = _windowPoints + _waterValveTask +
             _drawerTask + _fuseboxTask +
@@ -158,32 +168,28 @@ namespace score_system
 
         public string GetEndingText()
         {
-            if (leftOnTime)
+            if (!leftOnTime)
+                return Endings.Ending2;
+
+            if (!mapDone || !mapTaken)
+                return UnityEngine.Random.value < 0.5f ? Endings.Ending1 : Endings.Ending6;
+
+            switch (chosenShelter)
             {
-                if (!mapDone)
-                {
-                    if (Random.value < 0.5f) return Endings.Ending1;
-                }
+                case MapChoice.DesignatedShelter:
+                    return (windowDone && fuseboxDone && valveDone && drawerDone)
+                        ? Endings.Ending3
+                        : Endings.Ending5;
 
-                if (chosenShelter == MapChoice.DesignatedShelter)
-                {
-                    if (windowDone && fuseboxDone && valveDone && drawerDone) return Endings.Ending3;
-                    if (!windowDone || !fuseboxDone || !valveDone || !drawerDone) return Endings.Ending5;
-                }
-
-                if (chosenShelter == MapChoice.Hill)
-                {
-                    if (packingDone && tookBackpack)
-                    {
-                        if (windowDone && fuseboxDone && valveDone && drawerDone) return Endings.Ending3;
-                        if (!windowDone || !fuseboxDone || !valveDone || !drawerDone) return Endings.Ending5;
-                    }
-
+                case MapChoice.Hill:
                     if (!packingDone || !tookBackpack) return Endings.Ending4;
-                }
-            }
+                    return (windowDone && fuseboxDone && valveDone && drawerDone)
+                        ? Endings.Ending3
+                        : Endings.Ending5;
 
-            return Endings.Ending2;
+                default:
+                    return Endings.Ending1;
+            }
         }
 
         public void SaveToSupabase()
@@ -191,9 +197,11 @@ namespace score_system
             int total = TotalScore();
             string ending = GetEndingText();
             string playerId = GameManager.Instance.PlayerId;
+            string timestamp = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
 
             string json = $@"{{
         ""player_id"": ""{playerId}"",
+        ""created_at"": ""{timestamp}"",
         ""score_window"": {_windowPoints},
         ""score_water_valve"": {_waterValveTask},
         ""score_drawer"": {_drawerTask},
@@ -221,7 +229,10 @@ namespace score_system
             if (ending == Endings.Ending2) return 2;
             if (ending == Endings.Ending3) return 3;
             if (ending == Endings.Ending4) return 4;
-            return 5;
+            if (ending == Endings.Ending5) return 5;
+            if (ending == Endings.Ending6) return 6;
+            Debug.LogError($"Unrecognised ending string: '{ending}'");
+            return 1;
         }
     }
 }

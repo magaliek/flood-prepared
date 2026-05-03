@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8030297e688d47aea125e4c02ff9e32, type: 3}
+  m_Script: {fileID: 11500000, guid: 9226f630513e447f6a77db87919e3fce, type: 3}
   m_Name: Insurance
   m_EditorClassIdentifier: Assembly-CSharp::DocumentData
-  id: Insurance
+  id: insurance
   displayName: Insurance Documents
-  icon: {fileID: -1699418753, guid: 5c76ef47286a94a278d5b70c2f8b5aad, type: 3}
+  icon: {fileID: 21300000, guid: 1d4e4469e20164dc193b479b0f3da373, type: 3}

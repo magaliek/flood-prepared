@@ -1,5 +1,7 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
+using score_system;
 
 public class InteractionSystem : MonoBehaviour
 {
@@ -16,8 +18,8 @@ public class InteractionSystem : MonoBehaviour
 
     private void Update()
     {
-        // PC: Trykk E
-        if (Input.GetKeyDown(KeyCode.E))
+        // PC: Trykk Enter
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
             TryInteract();
     }
 
@@ -35,17 +37,23 @@ public class InteractionSystem : MonoBehaviour
         RefreshUI();
     }
 
-    // Kan kalles fra E eller fra knapp (OnClick)
     public void TryInteract()
     {
-        Debug.Log("TryInteract called. Current = " + (current == null ? "NULL" : current.GetType().Name));
-        
+        //Debug.Log("TryInteract called. Current = " + (current == null ? "NULL" : current.GetType().Name));
+
         if (current == null) return;
 
-        Debug.Log("Interacting with: " + current.GetType().Name);
+        if (current is DrawerUI)
+        {
+            if (ScoreScript.Instance.drawerDone)
+            {
+                return;
+            }
+        }
+
+        //Debug.Log("Interacting with: " + current.GetType().Name);
         current.Interact();
 
-        // Objektet kan deaktivere seg selv etter interaksjon
         RefreshUI();
     }
 

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8030297e688d47aea125e4c02ff9e32, type: 3}
+  m_Script: {fileID: 11500000, guid: 9226f630513e447f6a77db87919e3fce, type: 3}
   m_Name: Rental Lease
   m_EditorClassIdentifier: Assembly-CSharp::DocumentData
   id: rental_lease
-  displayName: Rental Lease
-  icon: {fileID: -1212047965, guid: 5c76ef47286a94a278d5b70c2f8b5aad, type: 3}
+  displayName: Rental lease
+  icon: {fileID: 21300000, guid: bf42d75ded83445d0b741f425e05348f, type: 3}

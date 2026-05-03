@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using score_system;
 
 public class WaterValveTask : MonoBehaviour
 {
@@ -92,6 +93,8 @@ public class WaterValveTask : MonoBehaviour
 
         if (currentValve)
             currentValve.CompleteTask();
+
+        ScoreScript.Instance.valveDone = isCompleted;
     }
 
     public void CancelTask()
