@@ -647,8 +647,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 371305131}
   m_HandleRect: {fileID: 371305130}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.20283447
+  m_Value: 1.0000001
+  m_Size: 0.44404307
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -757,8 +757,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4281940287
+  m_fontColor: {r: 0.24705882, g: 0.22352941, b: 0.22352941, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -894,8 +894,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4279637530
+  m_fontColor: {r: 0.103773594, g: 0.084683165, b: 0.084683165, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1467,8 +1467,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4279900706
+  m_fontColor: {r: 0.13207549, g: 0.101548605, b: 0.101548605, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1948,8 +1948,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4281940287
+  m_fontColor: {r: 0.24705882, g: 0.22352941, b: 0.22352941, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2079,14 +2079,14 @@ MonoBehaviour:
   m_text: Done
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8578d43619f994326ab451c9f55d724e, type: 2}
-  m_sharedMaterial: {fileID: -5644415589856196860, guid: 8578d43619f994326ab451c9f55d724e, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: abe1dba37264549b18350e51d21117de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288651076
-  m_fontColor: {r: 0.26726595, g: 0.6226415, b: 0.6226415, a: 1}
+    rgba: 4281940287
+  m_fontColor: {r: 0.24705882, g: 0.22352941, b: 0.22352941, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2411,14 +2411,14 @@ MonoBehaviour:
     and follow instructions using realistic historical scenarios."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8578d43619f994326ab451c9f55d724e, type: 2}
-  m_sharedMaterial: {fileID: -5644415589856196860, guid: 8578d43619f994326ab451c9f55d724e, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: abe1dba37264549b18350e51d21117de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283914027
-  m_fontColor: {r: 0.16820931, g: 0.33962262, b: 0.33962262, a: 1}
+    rgba: 4280624427
+  m_fontColor: {r: 0.16981131, g: 0.14658241, b: 0.14658241, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2554,8 +2554,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4281940287
+  m_fontColor: {r: 0.24528301, g: 0.2233001, b: 0.2233001, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3854,8 +3854,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4280361252
+  m_fontColor: {r: 0.14150941, g: 0.12749197, b: 0.12749197, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4208,41 +4208,29 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Once more the storm is howling, and half hid\nUnder this cradle-hood and
-    coverlid\nMy child sleeps on. There is no obstacle\nBut Gregory's wood and one
-    bare hill\nWhereby the haystack- and roof-levelling wind,\nBred on the Atlantic,
-    can be stayed;\nAnd for an hour I have walked and prayed\nBecause of the great
-    gloom that is in my mind.\n\nI have walked and prayed for this young child an
-    hour\nAnd heard the sea-wind scream upon the tower,\nAnd under the arches of
-    the bridge, and scream\nIn the elms above the flooded stream;\nImagining in excited
-    reverie\nThat the future years had come,\nDancing to a frenzied drum,\nOut of
-    the murderous innocence of the sea.\n\nMay she be granted beauty and yet not\nBeauty
-    to make a stranger's eye distraught,\nOr hers before a looking-glass, for such,\nBeing
-    made beautiful overmuch,\nConsider beauty a sufficient end,\nLose natural kindness
-    and maybe\nThe heart-revealing intimacy\nThat chooses right, and never find a
-    friend.\n\nHelen being chosen found life flat and dull\nAnd later had much trouble
-    from a fool,\nWhile that great Queen, that rose out of the spray,\nBeing fatherless
-    could have her way\nYet chose a bandy-legg\xE8d smith for man.\nIt's certain
-    that fine women eat\nA crazy salad with their meat\nWhereby the Horn of Plenty
-    is undone.\n\nIn courtesy I'd have her chiefly learned;\nHearts are not had as
-    a gift but hearts are earned\nBy those that are not entirely beautiful;\nYet
-    many, that have played the fool\nFor beauty's very self, has charm made wise,\nAnd
-    many a poor man that has roved,\nLoved and thought himself beloved,\nFrom a glad
-    kindness cannot take his eyes.\n\nMay she become a flourishing hidden tree\nThat
-    all her thoughts may like the linnet be,\nAnd have no business but dispensing
-    round\nTheir magnanimities of sound,\nNor but in merriment begin a chase,\nNor
-    but in merriment a quarrel.\nO may she live like some green laurel\nRooted in
-    one dear perpetual place."
+  m_text: "This game is a serious game designed to build preparedness for flood disasters,
+    guiding the player through two phases of  preparedness and evacuation tasks.\n\nPhase
+    1 includes six tasks, and once all are completed, the player clicks a \"done?\"
+    button to proceed to Phase 2. Phase 2 consists of three tasks followed by an
+    evacuation sequence, where the player must exit the house before time runs out.\n\nEach
+    phase displays a task list on screen in the hallway, with completed tasks crossed
+    off automatically. To trigger task mini games, the player interacts with various
+    objects throughout the game by moving close to them and pressing Enter, except
+    for one task that needs the player to click on the \"phone\" button at the bottom
+    of the screen with their mouse. \n\nAlmost all tasks require mouse interaction,
+    such as dragging or clicking items, however the fusebox task can be played with
+    the arrow keys and enter, and the water valve task requires keyboard interaction.\n\nThe
+    player moves using the arrow keys or WASD controls ."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8578d43619f994326ab451c9f55d724e, type: 2}
-  m_sharedMaterial: {fileID: -5644415589856196860, guid: 8578d43619f994326ab451c9f55d724e, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: abe1dba37264549b18350e51d21117de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4280887600
+  m_fontColor: {r: 0.18867922, g: 0.16108933, b: 0.16108933, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4372,14 +4360,14 @@ MonoBehaviour:
   m_text: Done
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8578d43619f994326ab451c9f55d724e, type: 2}
-  m_sharedMaterial: {fileID: -5644415589856196860, guid: 8578d43619f994326ab451c9f55d724e, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: abe1dba37264549b18350e51d21117de, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4288651076
-  m_fontColor: {r: 0.26726595, g: 0.6226415, b: 0.6226415, a: 1}
+    rgba: 4281940287
+  m_fontColor: {r: 0.24705882, g: 0.22352941, b: 0.22352941, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5739,7 +5727,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -511, y: -367}
+  m_AnchoredPosition: {x: -854, y: -403}
   m_SizeDelta: {x: 200, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2072486736
