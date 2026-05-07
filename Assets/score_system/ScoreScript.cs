@@ -29,7 +29,7 @@ namespace score_system
         private int _takingBackpack;
         private int _outBeforeTimer;
 
-        public MapChoice chosenShelter;
+        public MapChoice chosenShelter = MapChoice.None;
         public bool packingDone;
         public bool notebookDone;
         public bool notebookTaken;

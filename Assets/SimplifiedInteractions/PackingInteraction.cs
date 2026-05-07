@@ -1,6 +1,5 @@
 using UnityEngine;
 using score_system;
-using UnityEngine.SocialPlatforms.Impl;
 
 namespace SimplifiedInteractions
 {
@@ -37,10 +36,10 @@ namespace SimplifiedInteractions
         {
             if (_playerNearby && Input.GetKeyDown(KeyCode.Return) && !ScoreScript.Instance.packingDone && !ScoreScript.Instance.phase2)
                 panel.SetActive(true);
-            
-            if (_playerNearby && Input.GetKeyDown(KeyCode.Return) && ScoreScript.Instance.phase2)
-                this.gameObject.SetActive(false);
-                ScoreScript.Instance.tookBackpack = true;
+
+            if (!_playerNearby || !Input.GetKeyDown(KeyCode.Return) || !ScoreScript.Instance.phase2) return;
+            this.gameObject.SetActive(false);
+            ScoreScript.Instance.tookBackpack = true;
         }
     }
 }

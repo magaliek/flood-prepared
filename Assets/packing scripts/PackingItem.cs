@@ -1,11 +1,12 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace packing_scripts
 {
     public abstract class PackingItem : MonoBehaviour,
         IPointerDownHandler, IPointerUpHandler,
-        IBeginDragHandler, IDragHandler, IEndDragHandler
+        IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
     {
         [SerializeField] protected float calories;
         public float Calories => calories;
@@ -22,13 +23,15 @@ namespace packing_scripts
         [SerializeField] protected float weight;
         public float Weight => weight;
         [SerializeField] protected int points;
-        
+        [SerializeField] private TMP_Text label;
 
         protected RectTransform _rect;
+        protected RectTransform _labelRect;
         protected CanvasGroup _cg;
         protected Canvas _rootCanvas;
         protected Transform _originalParent;
         protected Vector2 _originalPosition;
+        protected Vector2 _labelOriginalPosition;
         protected Vector2 _originalAnchorMin;
         protected Vector2 _originalAnchorMax;
         protected Vector2 _originalPivot;
@@ -36,6 +39,7 @@ namespace packing_scripts
         protected virtual void Awake()
         {
             _rect = GetComponent<RectTransform>();
+            if (label != null) _labelRect = label.rectTransform;
             _cg = GetComponent<CanvasGroup>();
             _rootCanvas = FindRootCanvas();
         }
@@ -44,10 +48,21 @@ namespace packing_scripts
         {
             _originalParent = transform.parent;
             _originalPosition = _rect.anchoredPosition;
+            if (label != null) _labelOriginalPosition = _labelRect.anchoredPosition;
             _originalAnchorMin = _rect.anchorMin;
             _originalAnchorMax = _rect.anchorMax;
             _originalPivot = _rect.pivot;
             GetPoints();
+        }
+        
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            if (label != null) label.gameObject.SetActive(true);
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            if (label != null) label.gameObject.SetActive(false);
         }
 
         public virtual int GetPoints()
@@ -65,11 +80,13 @@ namespace packing_scripts
         public void OnPointerDown(PointerEventData eventData)
         {
             CursorScript.Instance?.SetClick();
+            if (label != null) label.gameObject.SetActive(true);
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
             CursorScript.Instance?.SetDefault();
+            if (label != null) label.gameObject.SetActive(false);
         }
 
         public void OnBeginDrag(PointerEventData eventData)
@@ -78,6 +95,7 @@ namespace packing_scripts
             transform.SetParent(_rootCanvas.transform, true);
 
             _cg.blocksRaycasts = false;
+            if (label != null) label.gameObject.SetActive(true);
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -95,7 +113,7 @@ namespace packing_scripts
                 Mathf.Clamp(_rect.anchoredPosition.y, -halfH + itemHalfH, halfH - itemHalfH)
             );
 
-            
+            if (label != null) label.gameObject.SetActive(true);
             CursorScript.Instance?.SetClick();
         }
 
@@ -107,6 +125,7 @@ namespace packing_scripts
             {
                 transform.SetParent(_originalParent, true);
             }
+            if (label != null) label.gameObject.SetActive(false);
         }
 
         protected Canvas FindRootCanvas()
@@ -122,6 +141,7 @@ namespace packing_scripts
             _rect.anchorMax = _originalAnchorMax;
             _rect.pivot = _originalPivot;
             _rect.anchoredPosition = _originalPosition;
+            if (_labelRect != null) _labelRect.anchoredPosition = _labelOriginalPosition;
             _cg.alpha = 1f;
             _cg.blocksRaycasts = true;
             _cg.interactable = true;

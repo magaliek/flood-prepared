@@ -16,5 +16,6 @@ public class doneScriptMap : MonoBehaviour
     {
         mapPanel.SetActive(false);
         ScoreScript.Instance.mapDone = true;
+        Debug.Log($"Chosen shelter {ScoreScript.Instance.chosenShelter}");
     }
 }

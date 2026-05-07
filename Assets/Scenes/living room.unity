@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 23635}
   - component: {fileID: 23634}
   - component: {fileID: 23633}
-  - component: {fileID: 23640}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -431,19 +430,6 @@ Transform:
   - {fileID: 306726625}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &23640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23632}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4b1fde74cc8c437ba140a7ef2004039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteractTrigger
-  interactionSystem: {fileID: 0}
 --- !u!1 &22920336
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +467,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -761.3853, y: -513.3279}
+  m_AnchoredPosition: {x: -761, y: -491}
   m_SizeDelta: {x: 267.181, y: 168.191}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &22920339
@@ -1398,7 +1384,6 @@ GameObject:
   - component: {fileID: 363246177}
   - component: {fileID: 363246176}
   - component: {fileID: 363246175}
-  - component: {fileID: 363246178}
   m_Layer: 5
   m_Name: Black Screen Fade
   m_TagString: Untagged
@@ -1475,18 +1460,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363246173}
   m_CullTransparentMesh: 1
---- !u!114 &363246178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 363246173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f373f05f0d64a518cb48fff4bcb9dfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Scenes_Scripts.SceneTransitionFadeOut
 --- !u!1 &396428681
 GameObject:
   m_ObjectHideFlags: 0
@@ -1499,9 +1472,9 @@ GameObject:
   - component: {fileID: 396428686}
   - component: {fileID: 396428685}
   - component: {fileID: 396428684}
-  - component: {fileID: 396428683}
+  - component: {fileID: 396428687}
   m_Layer: 5
-  m_Name: momshousecircle
+  m_Name: shelterCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1526,22 +1499,6 @@ RectTransform:
   m_AnchoredPosition: {x: -81.8, y: 388}
   m_SizeDelta: {x: 150, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &396428683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396428681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8555ad6e2a504010aea00078f71e6b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Circle
-  imageCircle: {fileID: 0}
-  ticked: 0
-  NotTickedCircle: {fileID: 21300000, guid: e2abd14aebf2c4b27949de5598aabcfe, type: 3}
-  TickedCircle: {fileID: 21300000, guid: 42f721947ff004acea65649059d6c68b, type: 3}
 --- !u!114 &396428684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1586,8 +1543,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 396428683}
-        m_TargetAssemblyTypeName: Circle, Assembly-CSharp
+      - m_Target: {fileID: 396428687}
+        m_TargetAssemblyTypeName: MapCanvasAssets.ShelterCircle, Assembly-CSharp
         m_MethodName: tickingCircle
         m_Mode: 1
         m_Arguments:
@@ -1636,6 +1593,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 396428681}
   m_CullTransparentMesh: 1
+--- !u!114 &396428687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396428681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b55bc09f0210488f948d150af67aebe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapCanvasAssets.ShelterCircle
+  imageCircle: {fileID: 0}
+  ticked: 0
+  NotTickedCircle: {fileID: 21300000, guid: e2abd14aebf2c4b27949de5598aabcfe, type: 3}
+  TickedCircle: {fileID: 21300000, guid: 42f721947ff004acea65649059d6c68b, type: 3}
+  _riverCircle: {fileID: 806559636}
+  _basementCircle: {fileID: 1548127270}
+  _hillCircle: {fileID: 1368345911}
 --- !u!1 &410763902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,7 +1858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &570992211
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1991,7 +1967,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &570992213
@@ -2661,9 +2637,9 @@ GameObject:
   - component: {fileID: 806559635}
   - component: {fileID: 806559634}
   - component: {fileID: 806559633}
-  - component: {fileID: 806559632}
+  - component: {fileID: 806559636}
   m_Layer: 5
-  m_Name: friendshousecircle
+  m_Name: nearRiverShelter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2688,22 +2664,6 @@ RectTransform:
   m_AnchoredPosition: {x: -28, y: -224}
   m_SizeDelta: {x: 150, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &806559632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 806559630}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8555ad6e2a504010aea00078f71e6b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Circle
-  imageCircle: {fileID: 0}
-  ticked: 0
-  NotTickedCircle: {fileID: 21300000, guid: e2abd14aebf2c4b27949de5598aabcfe, type: 3}
-  TickedCircle: {fileID: 21300000, guid: 42f721947ff004acea65649059d6c68b, type: 3}
 --- !u!114 &806559633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2748,8 +2708,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 806559632}
-        m_TargetAssemblyTypeName: Circle, Assembly-CSharp
+      - m_Target: {fileID: 806559636}
+        m_TargetAssemblyTypeName: MapCanvasAssets.RiverCircle, Assembly-CSharp
         m_MethodName: tickingCircle
         m_Mode: 1
         m_Arguments:
@@ -2798,6 +2758,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 806559630}
   m_CullTransparentMesh: 1
+--- !u!114 &806559636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806559630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a76ab05f9c8f424dbda664083a773f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapCanvasAssets.RiverCircle
+  imageCircle: {fileID: 0}
+  ticked: 0
+  NotTickedCircle: {fileID: 21300000, guid: e2abd14aebf2c4b27949de5598aabcfe, type: 3}
+  TickedCircle: {fileID: 21300000, guid: 42f721947ff004acea65649059d6c68b, type: 3}
+  _basementCircle: {fileID: 1548127270}
+  _shelterCircle: {fileID: 396428687}
+  _hillCircle: {fileID: 1368345911}
 --- !u!1 &951442401
 GameObject:
   m_ObjectHideFlags: 0
@@ -5848,9 +5827,9 @@ GameObject:
   - component: {fileID: 1368345910}
   - component: {fileID: 1368345909}
   - component: {fileID: 1368345908}
-  - component: {fileID: 1368345907}
+  - component: {fileID: 1368345911}
   m_Layer: 5
-  m_Name: highergroundcircle
+  m_Name: hillShelter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5875,22 +5854,6 @@ RectTransform:
   m_AnchoredPosition: {x: 769, y: 145}
   m_SizeDelta: {x: 150, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1368345907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1368345905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8555ad6e2a504010aea00078f71e6b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Circle
-  imageCircle: {fileID: 0}
-  ticked: 0
-  NotTickedCircle: {fileID: 21300000, guid: e2abd14aebf2c4b27949de5598aabcfe, type: 3}
-  TickedCircle: {fileID: 21300000, guid: 42f721947ff004acea65649059d6c68b, type: 3}
 --- !u!114 &1368345908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5935,8 +5898,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1368345907}
-        m_TargetAssemblyTypeName: Circle, Assembly-CSharp
+      - m_Target: {fileID: 1368345911}
+        m_TargetAssemblyTypeName: MapCanvasAssets.HillCircle, Assembly-CSharp
         m_MethodName: tickingCircle
         m_Mode: 1
         m_Arguments:
@@ -5985,6 +5948,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1368345905}
   m_CullTransparentMesh: 1
+--- !u!114 &1368345911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368345905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d08c99f43674e0b8fcc22c2452a4fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapCanvasAssets.HillCircle
+  imageCircle: {fileID: 0}
+  ticked: 0
+  NotTickedCircle: {fileID: 21300000, guid: e2abd14aebf2c4b27949de5598aabcfe, type: 3}
+  TickedCircle: {fileID: 21300000, guid: 42f721947ff004acea65649059d6c68b, type: 3}
+  _riverCircle: {fileID: 806559636}
+  _shelterCircle: {fileID: 396428687}
+  _basementCircle: {fileID: 1548127270}
 --- !u!1 &1383816187
 GameObject:
   m_ObjectHideFlags: 0
@@ -6852,7 +6834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1436377954
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7033,9 +7015,9 @@ GameObject:
   - component: {fileID: 1548127269}
   - component: {fileID: 1548127268}
   - component: {fileID: 1548127267}
-  - component: {fileID: 1548127266}
+  - component: {fileID: 1548127270}
   m_Layer: 5
-  m_Name: sistershousecircle
+  m_Name: basementHouseShelter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7060,22 +7042,6 @@ RectTransform:
   m_AnchoredPosition: {x: -751.0026, y: 426.01917}
   m_SizeDelta: {x: 150, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1548127266
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1548127264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8555ad6e2a504010aea00078f71e6b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Circle
-  imageCircle: {fileID: 0}
-  ticked: 0
-  NotTickedCircle: {fileID: 21300000, guid: e2abd14aebf2c4b27949de5598aabcfe, type: 3}
-  TickedCircle: {fileID: 21300000, guid: 42f721947ff004acea65649059d6c68b, type: 3}
 --- !u!114 &1548127267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7120,8 +7086,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1548127266}
-        m_TargetAssemblyTypeName: Circle, Assembly-CSharp
+      - m_Target: {fileID: 1548127270}
+        m_TargetAssemblyTypeName: MapCanvasAssets.BasementCircle, Assembly-CSharp
         m_MethodName: tickingCircle
         m_Mode: 1
         m_Arguments:
@@ -7170,6 +7136,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1548127264}
   m_CullTransparentMesh: 1
+--- !u!114 &1548127270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1548127264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a1d94c8e72f4954921db2912d18b4f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MapCanvasAssets.BasementCircle
+  imageCircle: {fileID: 0}
+  ticked: 0
+  NotTickedCircle: {fileID: 21300000, guid: e2abd14aebf2c4b27949de5598aabcfe, type: 3}
+  TickedCircle: {fileID: 21300000, guid: 42f721947ff004acea65649059d6c68b, type: 3}
+  _riverCircle: {fileID: 806559636}
+  _shelterCircle: {fileID: 396428687}
+  _hillCircle: {fileID: 1368345911}
 --- !u!1 &1563069333
 GameObject:
   m_ObjectHideFlags: 0
@@ -7587,8 +7572,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -854, y: 444.51}
-  m_SizeDelta: {x: 330.9801, y: 103.0157}
+  m_AnchoredPosition: {x: -906, y: 454}
+  m_SizeDelta: {x: 200, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1719864614
 MonoBehaviour:
@@ -7610,7 +7595,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sisters House
+  m_text: Sister's house
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7676,7 +7661,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -0.06300343, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8371,8 +8356,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1566981831342914415}
-  - {fileID: 1088352529}
   - {fileID: 1536365374}
+  - {fileID: 1088352529}
   - {fileID: 410763903}
   - {fileID: 1786942557}
   m_Father: {fileID: 0}
