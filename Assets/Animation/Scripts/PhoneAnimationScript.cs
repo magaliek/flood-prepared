@@ -74,7 +74,7 @@ namespace Animation.Scripts
 
             elapsed = 0f;
 
-            Vector2 bannerEnd = bannerStart + new Vector2(0f, moveDistanceY);
+            Vector2 bannerEnd = bannerStart + new Vector2(0f, moveDistanceY*1.5f);
             Vector2 fingerEnd = fingerLeftPosition + new Vector2(0f, moveDistanceY);
 
             while (elapsed < duration)

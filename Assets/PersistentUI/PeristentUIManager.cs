@@ -66,7 +66,7 @@ namespace persistentUI
                     musicRoutine = StartCoroutine(StepVolume(phase1Music, 1f));
 
                     // Alarm startar samtidig
-                    phase2Music.volume = 1f;
+                    phase2Music.volume = 0.65f;
                     phase2Music.Play();
                 }
             }

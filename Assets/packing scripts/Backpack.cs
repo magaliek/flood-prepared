@@ -43,7 +43,7 @@ namespace packing_scripts
         {
             if (Instance != null) {Destroy(gameObject); return;}
             Instance = this;
-            
+            DontDestroyOnLoad(this);
             _contentParent = transform as RectTransform;
             _outline = GetComponent<Outline>();
             _outline.enabled = false;

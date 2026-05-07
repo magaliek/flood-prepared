@@ -20,6 +20,13 @@ public class InteractableFuseBox : MonoBehaviour
 
         if (fuseBoxTask == null)
             Debug.LogWarning("FuseBoxTask is missing!");
+
+        // Restore state from ScoreScript
+        if (ScoreScript.Instance != null && ScoreScript.Instance.fuseboxDone)
+        {
+            isPowerOff = true;
+            if (promptUI) promptUI.Show("Power disconnected");
+        }
     }
 
     private void Update()

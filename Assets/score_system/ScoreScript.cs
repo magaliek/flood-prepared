@@ -88,12 +88,6 @@ namespace score_system
         private void AddTakingBackpackPoints(IReadOnlyList<PackingItem> packed)
         {
             if (!tookBackpack) return;
-            if (packed.Count <= 0)
-            {
-                _backpackPoints = 0;
-                return;
-            }
-
             _takingBackpack += 35;
         }
 
@@ -106,8 +100,6 @@ namespace score_system
         private void AddPackingPoints(IReadOnlyList<PackingItem> packed)
         {
             if (!packingDone) return;
-            
-
             
             {
                 foreach (var item in packed)
@@ -150,12 +142,9 @@ namespace score_system
             ResetPoints(); AddDrawerPoints();
             AddFuseboxPoints(); AddMapPoints();
             AddNotebookPoints(); AddNotificationPoints();
-            
-            var packed = Backpack.Instance != null ? Backpack.Instance.Packed : new List<PackingItem>();
-
-            AddTakingBackpackPoints(packed);
+            AddTakingBackpackPoints(Backpack.Instance.Packed);
             AddTimerPoints(); AddValvePoints();
-            AddWindowPoints(); AddPackingPoints(packed);
+            AddWindowPoints(); AddPackingPoints(Backpack.Instance.Packed);
             
             int totalPoints = _windowPoints + _waterValveTask +
             _drawerTask + _fuseboxTask +
@@ -168,27 +157,29 @@ namespace score_system
 
         public string GetEndingText()
         {
-            if (!leftOnTime)
-                return Endings.Ending2;
+            if (!leftOnTime) return Endings.Ending2;
 
-            if (!mapDone || !mapTaken)
-                return UnityEngine.Random.value < 0.5f ? Endings.Ending1 : Endings.Ending6;
+            if (!mapTaken) return Endings.Ending1;
 
+            if (mapTaken)
+            {
+                if (!mapDone) return UnityEngine.Random.value < 0.5f ? Endings.Ending7 : Endings.Ending6;
+            }
+            
+            if (!(windowDone && fuseboxDone && valveDone && drawerDone)) return Endings.Ending5;
+            
             switch (chosenShelter)
             {
-                case MapChoice.DesignatedShelter:
-                    return (windowDone && fuseboxDone && valveDone && drawerDone)
-                        ? Endings.Ending3
-                        : Endings.Ending5;
+                case MapChoice.DesignatedShelter: return Endings.Ending3;
 
-                case MapChoice.Hill:
-                    if (!packingDone || !tookBackpack) return Endings.Ending4;
-                    return (windowDone && fuseboxDone && valveDone && drawerDone)
-                        ? Endings.Ending3
-                        : Endings.Ending5;
-
+                case MapChoice.Hill: return Endings.Ending8;
+                
+                case MapChoice.Basement: return Endings.Ending9;
+                
+                case MapChoice.NearRiver: return Endings.Ending10;
+                
                 default:
-                    return Endings.Ending1;
+                    return Endings.Default;
             }
         }
 
@@ -231,6 +222,11 @@ namespace score_system
             if (ending == Endings.Ending4) return 4;
             if (ending == Endings.Ending5) return 5;
             if (ending == Endings.Ending6) return 6;
+            if (ending == Endings.Ending7) return 7;
+            if (ending == Endings.Ending8) return 8;
+            if (ending == Endings.Ending9) return 9;
+            if (ending == Endings.Ending10) return 10;
+            if (ending == Endings.Default) return 0;
             Debug.LogError($"Unrecognised ending string: '{ending}'");
             return 1;
         }

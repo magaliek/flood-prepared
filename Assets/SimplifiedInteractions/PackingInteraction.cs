@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using score_system;
+using TMPro;
 
 namespace SimplifiedInteractions
 {
@@ -12,13 +14,15 @@ namespace SimplifiedInteractions
 
         void OnCollisionEnter2D(Collision2D col)
         {
-            if (col.gameObject.CompareTag("Player"))
-            {
-                _playerNearby = true;
+            if (!col.gameObject.CompareTag("Player")) return;
+            _playerNearby = true;
 
-                if (popupText != null) 
-                    popupText.SetActive(true);
-            }
+            if (popupText != null && !ScoreScript.Instance.packingDone && !ScoreScript.Instance.phase2) 
+                popupText.SetActive(true);
+            
+            if (!ScoreScript.Instance.phase2) return;
+            popupText.GetComponent<TMP_Text>().text = "Take backpack?";
+            popupText.SetActive(true);
         }
 
         void OnCollisionExit2D(Collision2D col)
@@ -32,10 +36,18 @@ namespace SimplifiedInteractions
             }
         }
 
+        private void Start()
+        {
+            if (ScoreScript.Instance.tookBackpack) this.gameObject.SetActive(false);
+        }
+
         void Update()
         {
-            if (_playerNearby && Input.GetKeyDown(KeyCode.Return) && !ScoreScript.Instance.packingDone && !ScoreScript.Instance.phase2)
+            if (_playerNearby && Input.GetKeyDown(KeyCode.Return) && !ScoreScript.Instance.packingDone &&
+                !ScoreScript.Instance.phase2)
                 panel.SetActive(true);
+
+            if (!_playerNearby || !Input.GetKeyDown(KeyCode.Return) || !ScoreScript.Instance.phase2) return;
 
             if (!_playerNearby || !Input.GetKeyDown(KeyCode.Return) || !ScoreScript.Instance.phase2) return;
             this.gameObject.SetActive(false);

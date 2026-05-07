@@ -55,7 +55,6 @@ public class EndingScript : MonoBehaviour
         if (GameTimer.Instance != null && GameTimer.Instance.TimeLeft > 0f)
             ScoreScript.Instance.leftOnTime = true;
 
-        Debug.Log($"GameTimer.Instance: {GameTimer.Instance}, TimeLeft: {(GameTimer.Instance != null ? GameTimer.Instance.TimeLeft.ToString() : "N/A")}");
         Debug.Log($"leftOnTime: {ScoreScript.Instance.leftOnTime}");
 
         EndingText.text = ScoreScript.Instance.GetEndingText();

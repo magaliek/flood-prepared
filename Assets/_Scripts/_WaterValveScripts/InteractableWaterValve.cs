@@ -17,6 +17,16 @@ public class InteractableWaterValve : MonoBehaviour
     private void Start()
     {
         if (promptUI) promptUI.Hide();
+        else Debug.LogWarning("PromptUI is missing!");
+
+        if (valveTask == null)
+            Debug.LogWarning("FuseBoxTask is missing!");
+
+        if (ScoreScript.Instance != null && ScoreScript.Instance.fuseboxDone)
+        {
+            isDone = true;
+            if (promptUI) promptUI.Show("Water shut off");
+        }
     }
 
     private void Update()

@@ -62,6 +62,11 @@ public class InteractionSystem : MonoBehaviour
         if (promptText != null)
             promptText.text = current == null ? "" : current.PromptText;
 
+        if (ScoreScript.Instance != null && ScoreScript.Instance.drawerDone) 
+            promptText.text = "documents collected";
+        if (ScoreScript.Instance != null && ScoreScript.Instance.phase2) 
+            promptText.text = "";
+        
         if (interactButton != null)
             interactButton.SetActive(current != null);
     }

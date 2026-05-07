@@ -7,7 +7,6 @@ public class InteractPromptUI : MonoBehaviour
 
     private void Awake()
     {
-        if (!promptText) promptText = GetComponentInChildren<TMP_Text>();
         Hide();
     }
 

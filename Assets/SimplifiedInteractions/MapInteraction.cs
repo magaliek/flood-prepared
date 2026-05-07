@@ -1,5 +1,6 @@
 using UnityEngine;
 using score_system;
+using TMPro;
 
 namespace SimplifiedInteractions
 {
@@ -36,6 +37,8 @@ namespace SimplifiedInteractions
         {
             if (_playerNearby && Input.GetKeyDown(KeyCode.Return) && !ScoreScript.Instance.mapDone && !ScoreScript.Instance.phase2)
                 panel.SetActive(true);
+            if (ScoreScript.Instance.mapDone || ScoreScript.Instance.phase2)
+                popupText.GetComponent<TMP_Text>().text = "";
         }
     }
 }

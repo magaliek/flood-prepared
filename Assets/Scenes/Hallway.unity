@@ -3449,7 +3449,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.083780326, y: 0.06622096, z: 0.08495961, w: 0.99064505}
   m_LocalPosition: {x: -0.022, y: -0.084, z: -2.284}
-  m_LocalScale: {x: 1.2703041, y: 1.2703041, z: 1.270304}
+  m_LocalScale: {x: 0.27168652, y: 0.57032156, z: 0.65275836}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 406895873}
@@ -10959,10 +10959,10 @@ MonoBehaviour:
   bagGrid: {fileID: 2071931511}
   itemPrefab: {fileID: 8576652834511131945, guid: 0eb5bd343ab674e4b809248d66abf769, type: 3}
   bagButtonImage: {fileID: 2115735621}
-  openBagSprite: {fileID: 21300000, guid: 89c138cf8b6b44e0fb22c8d95292be8f, type: 3}
-  closedEmptyBagSprite: {fileID: 21300000, guid: 89c138cf8b6b44e0fb22c8d95292be8f, type: 3}
+  openBagSprite: {fileID: 21300000, guid: c87da5b00fdcc4b268482241ee10959e, type: 3}
+  closedEmptyBagSprite: {fileID: 21300000, guid: 157d44346f5fc3d4ca6a3de95ea366df, type: 3}
   closedMediumBagSprite: {fileID: 0}
-  closedFullBagSprite: {fileID: 21300000, guid: a4af91b5d97d84e53ac326bf4a775f31, type: 3}
+  closedFullBagSprite: {fileID: 21300000, guid: 5d3b977c485e4470daf6d51274e006cb, type: 3}
 --- !u!114 &1710760518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14310,8 +14310,8 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 04a2377cc0f134477b3030959efd28d8, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.505
+  m_Pitch: 0.56
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -14872,7 +14872,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 89c138cf8b6b44e0fb22c8d95292be8f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c87da5b00fdcc4b268482241ee10959e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14963,7 +14963,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -825, y: 170}
-  m_SizeDelta: {x: 225, y: 225}
+  m_SizeDelta: {x: 200, y: 225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2136439476
 GameObject:
