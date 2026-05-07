@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using score_system;
 using System.Collections;
+using Animation.Scripts;
 
 namespace persistentUI
 {
@@ -78,13 +79,17 @@ namespace persistentUI
         public void OnNotifButtonClick()
         {
             if (phonePanel != null)
+            {
                 phonePanel.SetActive(true);
+            }
         }
 
         public void OnPhase2ButtonClick()
         {
             ScoreScript.Instance.phase2 = true;
             phase2button.gameObject.SetActive(false);
+            WarningScript.Instance.panel.SetActive(true);
+            WarningScript.Instance.playFlashAnim();
         }
 
         private IEnumerator StepVolume(AudioSource audioSource, float targetVolume)

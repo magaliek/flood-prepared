@@ -25,8 +25,5 @@ public class taskpanel2script : MonoBehaviour
        togglewater.isOn=ScoreScript.Instance.valveDone;
        togglefusebox.isOn=ScoreScript.Instance.fuseboxDone;
        togglepickupbackpack.isOn=ScoreScript.Instance.tookBackpack;
-       
-
-
     }
 }

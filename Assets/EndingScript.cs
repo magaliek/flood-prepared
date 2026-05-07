@@ -4,6 +4,7 @@ using TMPro;
 using System.Collections;
 using persistentUI;
 using System;
+using _Scripts;
 
 public class EndingScript : MonoBehaviour
 {
