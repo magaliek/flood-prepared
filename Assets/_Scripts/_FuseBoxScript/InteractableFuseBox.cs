@@ -38,9 +38,10 @@ public class InteractableFuseBox : MonoBehaviour
         {
             if (promptUI) promptUI.Show("Press Enter to turn off power");
         }
-        else
+        else if (!ScoreScript.Instance.phase2) {promptUI.Show("");}
+        else if (promptUI)
         {
-            if (promptUI) promptUI.Show("Power disconnected");
+            promptUI.Show("Power disconnected");
         }
 
         if (!isPowerOff && !taskOpen &&

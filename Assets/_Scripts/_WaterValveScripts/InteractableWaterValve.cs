@@ -52,8 +52,11 @@ public class InteractableWaterValve : MonoBehaviour
 
         if (!isDone)
             promptUI.Show("Press Enter to shut off water");
+        else if (!ScoreScript.Instance.phase2) {promptUI.Show("");}
         else
+        {
             promptUI.Show("Water shut off");
+        }
     }
 
     public void CompleteTask()
