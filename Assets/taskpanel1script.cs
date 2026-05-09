@@ -31,8 +31,6 @@ public class taskpanel1script : MonoBehaviour
             panel2.SetActive(true);
         }
 
-
-
     }
 
 }

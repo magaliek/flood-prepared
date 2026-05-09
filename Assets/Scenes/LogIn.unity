@@ -647,8 +647,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 371305131}
   m_HandleRect: {fileID: 371305130}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.44404307
+  m_Value: 1
+  m_Size: 0.444043
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3456,7 +3456,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1920, y: 1280}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3

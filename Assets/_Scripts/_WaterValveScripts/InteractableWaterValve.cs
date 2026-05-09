@@ -80,7 +80,8 @@ public class InteractableWaterValve : MonoBehaviour
         if (!other.CompareTag("Player")) return;
 
         playerInRange = true;
-        UpdatePrompt();
+        if (ScoreScript.Instance.phase2)
+            UpdatePrompt();
     }
 
     private void OnTriggerExit2D(Collider2D other)
