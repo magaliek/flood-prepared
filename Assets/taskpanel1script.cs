@@ -15,6 +15,7 @@ public class taskpanel1script : MonoBehaviour
     
     public GameObject panel1;  
     public GameObject panel2; 
+    
     // Update is called once per frame
     void Update()
     {
@@ -30,6 +31,8 @@ public class taskpanel1script : MonoBehaviour
             panel1.SetActive(false);
             panel2.SetActive(true);
         }
+
+       
 
     }
 

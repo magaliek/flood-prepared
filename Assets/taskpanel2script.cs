@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using score_system;
+using _Scripts;
 
 public class taskpanel2script : MonoBehaviour
 
@@ -19,11 +20,17 @@ public class taskpanel2script : MonoBehaviour
          panel2.SetActive(false);
     }
 
+
     // Update is called once per frame
    void Update()
     {
        togglewater.isOn=ScoreScript.Instance.valveDone;
        togglefusebox.isOn=ScoreScript.Instance.fuseboxDone;
        togglepickupbackpack.isOn=ScoreScript.Instance.tookBackpack;
+
+        if (GameTimer.Instance != null && GameTimer.Instance.TimeLeft <= 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

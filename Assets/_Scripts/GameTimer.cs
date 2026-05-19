@@ -8,7 +8,7 @@ namespace _Scripts
         public static GameTimer Instance;
 
         [Header("Timer")]
-        [SerializeField] private float totalTimeSeconds = 300f;
+        [SerializeField] private float totalTimeSeconds = 30f;
 
         public float TimeLeft { get; private set; }
         public bool FloodStarted { get; private set; }

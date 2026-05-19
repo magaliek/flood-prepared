@@ -139,12 +139,13 @@ namespace score_system
         
         public int TotalScore()
         {
+
             ResetPoints(); AddDrawerPoints();
             AddFuseboxPoints(); AddMapPoints();
             AddNotebookPoints(); AddNotificationPoints();
-            AddTakingBackpackPoints(Backpack.Instance.Packed);
+            AddTakingBackpackPoints(Backpack.Instance?.Packed);
             AddTimerPoints(); AddValvePoints();
-            AddWindowPoints(); AddPackingPoints(Backpack.Instance.Packed);
+            AddWindowPoints(); AddPackingPoints(Backpack.Instance?.Packed);
             
             int totalPoints = _windowPoints + _waterValveTask +
             _drawerTask + _fuseboxTask +
