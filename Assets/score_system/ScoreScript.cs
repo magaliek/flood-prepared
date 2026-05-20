@@ -162,25 +162,17 @@ namespace score_system
 
             if (!mapTaken) return Endings.Ending1;
 
-            if (mapTaken)
-            {
-                if (!mapDone) return UnityEngine.Random.value < 0.5f ? Endings.Ending7 : Endings.Ending6;
-            }
-            
+            if (!mapDone) return UnityEngine.Random.value < 0.5f ? Endings.Ending7 : Endings.Ending6;
+
             if (!(windowDone && fuseboxDone && valveDone && drawerDone)) return Endings.Ending5;
-            
+
             switch (chosenShelter)
             {
                 case MapChoice.DesignatedShelter: return Endings.Ending3;
-
                 case MapChoice.Hill: return Endings.Ending8;
-                
                 case MapChoice.Basement: return Endings.Ending9;
-                
                 case MapChoice.NearRiver: return Endings.Ending10;
-                
-                default:
-                    return Endings.Default;
+                default: return Endings.Default;
             }
         }
 

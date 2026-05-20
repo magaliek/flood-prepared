@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using score_system;
 
+
 public class ZiplockBagUI : MonoBehaviour
 {
     [SerializeField] private GameObject bagContentsPanel;
